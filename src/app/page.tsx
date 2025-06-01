@@ -82,7 +82,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400/E5EAFE/2962FF?text=Custom+AI" alt="Custom AI Solutions" layout="fill" objectFit="cover" data-ai-hint="technology abstract" />
+             <Image src="https://placehold.co/600x400/1A1A1A/E5E5E5?text=Custom+AI" alt="Custom AI Solutions" layout="fill" objectFit="cover" data-ai-hint="technology abstract" />
           </div>
         </div>
       </Section>
@@ -136,7 +136,7 @@ export default function HomePage() {
       <Section className="bg-card">
          <div className="grid md:grid-cols-2 gap-12 items-center">
            <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400/2962FF/E5EAFE?text=Impact" alt="Real-world Impact" layout="fill" objectFit="cover" data-ai-hint="business success" />
+             <Image src="https://placehold.co/600x400/1A1A1A/E5E5E5?text=Impact" alt="Real-world Impact" layout="fill" objectFit="cover" data-ai-hint="business success" />
           </div>
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Real-World Impact</h2>
@@ -159,7 +159,7 @@ export default function HomePage() {
           Let's discuss how Frengen AI can help you unlock new possibilities and drive innovation.
         </p>
         <div className="mt-10">
-          <Button size="lg" variant="secondary" asChild className="text-primary hover:bg-secondary/90">
+          <Button size="lg" variant="secondary" asChild className="hover:bg-secondary/90">
             <Link href="/contact">Get Started Today</Link>
           </Button>
         </div>

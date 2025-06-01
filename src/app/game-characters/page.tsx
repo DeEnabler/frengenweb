@@ -45,7 +45,7 @@ export default function GameCharactersPage() {
       <Section id="why-ai-characters" className="bg-card">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400/9D39C4/FFFFFF?text=Game+AI" alt="AI Game Character" layout="fill" objectFit="cover" data-ai-hint="gaming character" />
+             <Image src="https://placehold.co/600x400/1A1A1A/E5E5E5?text=Game+AI" alt="AI Game Character" layout="fill" objectFit="cover" data-ai-hint="gaming character" />
           </div>
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">The Next Generation of Interactive Storytelling</h2>
@@ -70,7 +70,7 @@ export default function GameCharactersPage() {
           {features.map((feature) => (
             <FeatureCard
               key={feature.title}
-              icon={<div className="text-accent p-2 bg-accent/10 rounded-md">{feature.icon}</div>}
+              icon={<div className="text-primary p-2 bg-primary/10 rounded-md">{feature.icon}</div>}
               title={feature.title}
               description={feature.description}
               className="text-left"
@@ -97,17 +97,17 @@ export default function GameCharactersPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-6 bg-card rounded-lg shadow">
-                <Users2 className="w-10 h-10 text-accent mx-auto mb-3" />
+                <Users2 className="w-10 h-10 text-primary mx-auto mb-3" />
                 <h3 className="font-headline text-xl font-semibold mb-2">Boost Player Retention</h3>
                 <p className="text-sm text-muted-foreground">Keep players hooked with evolving characters and narratives that respond to their actions.</p>
             </div>
             <div className="p-6 bg-card rounded-lg shadow">
-                <Sparkles className="w-10 h-10 text-accent mx-auto mb-3" />
+                <Sparkles className="w-10 h-10 text-primary mx-auto mb-3" />
                 <h3 className="font-headline text-xl font-semibold mb-2">Unforgettable Experiences</h3>
                 <p className="text-sm text-muted-foreground">Create unique gameplay moments that players will talk about and remember.</p>
             </div>
             <div className="p-6 bg-card rounded-lg shadow">
-                <BrainCircuit className="w-10 h-10 text-accent mx-auto mb-3" />
+                <BrainCircuit className="w-10 h-10 text-primary mx-auto mb-3" />
                 <h3 className="font-headline text-xl font-semibold mb-2">Reduce Development Time</h3>
                 <p className="text-sm text-muted-foreground">Leverage AI to assist in content generation for complex character interactions.</p>
             </div>

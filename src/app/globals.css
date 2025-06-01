@@ -4,86 +4,95 @@
 
 @layer base {
   :root {
-    --background: 228 93% 95%; /* Light desaturated blue #E5EAFE - Page Body Background */
-    --foreground: 220 15% 25%; /* Darker text for readability on light blue */
+    /* Dark Theme (Default: Black Backgrounds, White Text) */
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
 
-    --card: 0 0% 100%; /* White for cards */
-    --card-foreground: 220 15% 25%;
+    --card: 0 0% 10%; /* Dark Gray #1A1A1A */
+    --card-foreground: 0 0% 90%; /* Light Gray #E5E5E5 */
 
-    --popover: 0 0% 100%; /* White for popovers */
-    --popover-foreground: 220 15% 25%;
+    --popover: 0 0% 10%; /* Dark Gray */
+    --popover-foreground: 0 0% 90%; /* Light Gray */
 
-    --primary: 225 100% 58%; /* Saturated blue #2962FF */
-    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --primary: 0 0% 80%; /* Light Gray #CCCCCC */
+    --primary-foreground: 0 0% 0%; /* Black */
 
-    --secondary: 225 80% 85%; /* Lighter blue for secondary elements */
-    --secondary-foreground: 225 100% 58%; /* Primary blue text on secondary */
+    --secondary: 0 0% 30%; /* Medium Dark Gray #4D4D4D */
+    --secondary-foreground: 0 0% 100%; /* White */
 
-    --muted: 228 60% 92%; /* Lighter, muted blue-gray for muted backgrounds */
-    --muted-foreground: 220 10% 45%; /* Muted text color */
+    --muted: 0 0% 15%; /* Darker Gray #262626 */
+    --muted-foreground: 0 0% 60%; /* Medium Gray #999999 */
 
-    --accent: 284 54% 50%; /* Purple #9D39C4 */
-    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --accent: 0 0% 25%; /* Medium Gray #404040 */
+    --accent-foreground: 0 0% 100%; /* White */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 0% 70%; /* Light Gray #B3B3B3 */
+    --destructive-foreground: 0 0% 10%; /* Dark Gray #1A1A1A */
 
-    --border: 228 30% 85%; /* Border color */
-    --input: 228 30% 88%; /* Input background */
-    --ring: 225 100% 58%; /* Ring color (primary) */
+    --border: 0 0% 20%; /* Dark Gray #333333 */
+    --input: 0 0% 12%; /* Darker Gray #1F1F1F */
+    --ring: 0 0% 80%; /* Light Gray #CCCCCC (for focus) */
 
     --radius: 0.5rem;
 
-    /* ShadCN Chart colors - can be adjusted if charts are used */
-    --chart-1: 225 100% 58%; /* Primary */
-    --chart-2: 284 54% 50%; /* Accent */
-    --chart-3: 197 37% 44%; /* A teal/blue */
-    --chart-4: 43 74% 66%;  /* An orange */
-    --chart-5: 27 87% 67%;  /* A coral */
+    --chart-1: var(--primary);
+    --chart-2: var(--secondary);
+    --chart-3: 0 0% 50%; /* Neutral Gray */
+    --chart-4: 0 0% 70%;  /* Lighter Gray */
+    --chart-5: 0 0% 30%;  /* Darker Gray */
 
-    /* Sidebar specific colors, may not be heavily used for this website style but defined for completeness */
-    --sidebar-background: 240 5% 12%; /* Darker for a potential dark sidebar variant or distinct panel */
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 225 100% 58%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 284 54% 50%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 240 5% 20%;
-    --sidebar-ring: 225 100% 58%;
+    /* Sidebar specific colors for Dark Theme */
+    --sidebar-background: 0 0% 5%; 
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 0% 80%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 80%;
   }
 
   .dark {
-    /* Define dark theme if needed, for now focus on light theme */
-    --background: 220 15% 10%;
-    --foreground: 0 0% 95%;
+    /* Light Theme (Activated by .dark class: White Backgrounds, Black Text) */
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 0%; /* Black */
 
-    --card: 220 15% 15%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 95%; /* Very Light Gray #F2F2F2 */
+    --card-foreground: 0 0% 10%; /* Very Dark Gray #1A1A1A */
 
-    --popover: 220 15% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 95%; /* Very Light Gray */
+    --popover-foreground: 0 0% 10%; /* Very Dark Gray */
 
-    --primary: 225 100% 65%;
-    --primary-foreground: 220 15% 5%;
+    --primary: 0 0% 20%; /* Dark Gray #333333 */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 220 15% 25%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 50%; /* Medium Gray #808080 */
+    --secondary-foreground: 0 0% 0%; /* Black */
 
-    --muted: 220 15% 20%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 90%; /* Light Gray #E5E5E5 */
+    --muted-foreground: 0 0% 40%; /* Medium Gray #666666 */
 
-    --accent: 284 54% 60%;
-    --accent-foreground: 220 15% 5%;
+    --accent: 0 0% 85%; /* Lighter Gray #D9D9D9 */
+    --accent-foreground: 0 0% 0%; /* Black */
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 0% 30%; /* Dark Gray #4D4D4D */
+    --destructive-foreground: 0 0% 90%; /* Light Gray #E5E5E5 */
 
-    --border: 220 15% 25%;
-    --input: 220 15% 25%;
-    --ring: 225 100% 65%;
-
-    --chart-1: 225 100% 65%;
-    --chart-2: 284 54% 60%;
+    --border: 0 0% 87%; /* Light Gray #DEDEDE */
+    --input: 0 0% 92%; /* Lighter Gray #EBEBEB */
+    --ring: 0 0% 20%; /* Dark Gray #333333 (for focus) */
+    
+    /* Chart colors will generally follow the main theme's primary/secondary or use defined grays */
+    
+    /* Sidebar specific colors for Light Theme */
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 20%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 80%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 20%;
   }
 }
 

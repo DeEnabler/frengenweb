@@ -18,7 +18,7 @@ const caseStudies = [
       "15% improvement in conversion rates.",
       "Significant reduction in cart abandonment.",
     ],
-    image: "https://placehold.co/600x400/2962FF/FFFFFF?text=Retail+Success",
+    image: "https://placehold.co/600x400/CCCCCC/000000?text=Retail+Success",
     imageHint: "retail success"
   },
   {
@@ -32,7 +32,7 @@ const caseStudies = [
       "10% decrease in material waste.",
       "Improved overall equipment effectiveness (OEE).",
     ],
-    image: "https://placehold.co/600x400/9D39C4/FFFFFF?text=Factory+AI",
+    image: "https://placehold.co/600x400/CCCCCC/000000?text=Factory+AI",
     imageHint: "factory automation"
   },
   {
@@ -46,7 +46,7 @@ const caseStudies = [
       "Player session length extended by 15 minutes on average.",
       "20% rise in in-app purchase revenue.",
     ],
-    image: "https://placehold.co/600x400/1ABC9C/FFFFFF?text=Game+Impact",
+    image: "https://placehold.co/600x400/CCCCCC/000000?text=Game+Impact",
     imageHint: "gaming success"
   },
 ];
@@ -57,7 +57,7 @@ const testimonials = [
     quote: "Frengen AI's solution transformed our customer engagement. Their team was incredibly knowledgeable and supportive throughout the process.",
     author: "Jane Doe",
     role: "CMO, RetailGiant Inc.",
-    avatar: "https://placehold.co/100x100/E0E0E0/333333?text=JD",
+    avatar: "https://placehold.co/100x100/CCCCCC/000000?text=JD",
     avatarHint: "person portrait"
   },
   {
@@ -65,7 +65,7 @@ const testimonials = [
     quote: "The AI agents developed by Frengen AI have given us a significant competitive edge. We're seeing real ROI.",
     author: "John Smith",
     role: "COO, AutoParts Ltd.",
-    avatar: "https://placehold.co/100x100/D0D0D0/333333?text=JS",
+    avatar: "https://placehold.co/100x100/CCCCCC/000000?text=JS",
     avatarHint: "person ceo"
   },
 ];
@@ -105,7 +105,7 @@ export default function CaseStudiesPage() {
                       <ul className="list-none space-y-1 mt-1">
                         {study.results.map((result, index) => (
                           <li key={index} className="flex items-start text-sm text-muted-foreground">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" /> {/* This green might need to become primary or a gray */}
                             {result}
                           </li>
                         ))}

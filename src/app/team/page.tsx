@@ -24,7 +24,7 @@ const teamMembers: TeamMember[] = [
     role: "Chief AI Scientist (ML PhD)",
     bio: "Evelyn leads our research division, pushing the boundaries of LLM applications and algorithm development. Her work focuses on creating truly intelligent and adaptive AI systems.",
     expertise: ["Machine Learning", "NLP", "Algorithm Design", "LLM Research"],
-    image: "https://placehold.co/300x300/E5EAFE/2962FF?text=ER",
+    image: "https://placehold.co/300x300/CCCCCC/000000?text=ER",
     imageHint: "scientist woman",
     linkedin: "#",
   },
@@ -34,7 +34,7 @@ const teamMembers: TeamMember[] = [
     role: "Lead Backend Architect (Ex-Big Tech)",
     bio: "With over a decade of experience at leading tech companies, Marcus designs and maintains the robust backend infrastructure powering our SaaS products and AI solutions.",
     expertise: ["Distributed Systems", "Cloud Computing", "SaaS Architecture", "API Design"],
-    image: "https://placehold.co/300x300/2962FF/FFFFFF?text=MC",
+    image: "https://placehold.co/300x300/CCCCCC/000000?text=MC",
     imageHint: "engineer man",
     linkedin: "#",
   },
@@ -44,7 +44,7 @@ const teamMembers: TeamMember[] = [
     role: "Senior Conversational AI Designer",
     bio: "Aisha specializes in crafting intuitive and engaging user experiences for our chatbots and AI agents, ensuring seamless human-AI interaction.",
     expertise: ["Conversation Design", "UX/UI for AI", "Prompt Engineering", "User Research"],
-    image: "https://placehold.co/300x300/9D39C4/FFFFFF?text=AK",
+    image: "https://placehold.co/300x300/CCCCCC/000000?text=AK",
     imageHint: "designer woman",
     linkedin: "#",
   },
@@ -54,7 +54,7 @@ const teamMembers: TeamMember[] = [
     role: "AI Developer (Student Innovator)",
     bio: "Leo brings fresh perspectives and cutting-edge skills from his ongoing computer science studies, contributing to innovative prototypes and LLM applications.",
     expertise: ["Python", "Langchain", "RAG Systems", "Rapid Prototyping"],
-    image: "https://placehold.co/300x300/1ABC9C/FFFFFF?text=LM",
+    image: "https://placehold.co/300x300/CCCCCC/000000?text=LM",
     imageHint: "student developer",
     linkedin: "#",
   },
@@ -82,7 +82,7 @@ export default function TeamPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
           {teamMembers.map((member) => (
             <Card key={member.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row">
-              <div className="sm:w-1/3 relative h-64 sm:h-auto min-h-[250px] bg-gray-200">
+              <div className="sm:w-1/3 relative h-64 sm:h-auto min-h-[250px]">
                 <Image 
                   src={member.image} 
                   alt={member.name} 
