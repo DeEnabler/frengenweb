@@ -1,3 +1,4 @@
+
 "use client";
 
 import { HeroSection } from '@/components/ui/hero-section';
@@ -8,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Phone, Mail, MapPin, Loader2 } from 'lucide-react';
+import { Mail, Loader2 } from 'lucide-react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -154,17 +155,6 @@ export default function ContactPage() {
                 <div className="flex items-center space-x-3">
                   <Mail className="w-6 h-6 text-primary" />
                   <a href="mailto:info@frengen.ai" className="text-md hover:text-primary">info@frengen.ai</a>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-6 h-6 text-primary" />
-                  <span className="text-md">+1 (555) 123-4567 (Placeholder)</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <MapPin className="w-6 h-6 text-primary mt-1" />
-                  <span className="text-md">
-                    123 AI Avenue, Innovation City, CA 90210, USA (Placeholder)<br/>
-                    Global Remote Team
-                  </span>
                 </div>
               </CardContent>
             </Card>
