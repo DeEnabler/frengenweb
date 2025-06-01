@@ -1,5 +1,4 @@
 
-
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
@@ -14,8 +13,7 @@ export default function HomePage() {
     <>
       <HeroSection
         title={<TypewriterEffect />}
-        titleClassName="text-4xl font-headline font-bold tracking-tight sm:text-5xl lg:text-6xl"
-        subtitle="We craft intelligent AI agents, dynamic chatbots, and immersive game characters to elevate your business and engage your users."
+        titleClassName="text-5xl font-headline font-bold tracking-tight sm:text-6xl lg:text-7xl"
       >
         <Button asChild size="lg">
           <Link href="/contact">Request a Demo</Link>
