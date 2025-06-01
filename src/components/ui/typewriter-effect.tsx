@@ -110,7 +110,7 @@ export function TypewriterEffect({ className, cursorClassName }: TypewriterEffec
   }, [isMounted]);
 
   return (
-    <span className={cn(className)} aria-live="polite" aria-atomic="true">
+    <span className={cn("inline-block", className)} aria-live="polite" aria-atomic="true">
       {displayText}
       {isMounted && showCursor && (
         <span className={cn("typing-cursor", "text-muted-foreground", cursorClassName)} aria-hidden="true">

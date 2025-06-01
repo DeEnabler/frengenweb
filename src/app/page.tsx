@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <HeroSection
         title={<TypewriterEffect />}
-        titleClassName="text-5xl font-headline font-bold tracking-tight sm:text-6xl lg:text-7xl min-h-36 flex items-center justify-center"
+        titleClassName="text-5xl font-headline font-bold tracking-tight sm:text-6xl lg:text-7xl min-h-40 flex items-center justify-center"
       >
         <Button asChild size="lg">
           <Link href="/contact">Request a Demo</Link>
