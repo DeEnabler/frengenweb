@@ -5,7 +5,7 @@ import { Section } from '@/components/ui/section';
 import { FeatureCard } from '@/components/ui/feature-card';
 import { Bot, Zap, BarChart, MessageSquare, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
-import { CaseStudySummaryDemo } from '@/components/genai/case-study-summary-demo';
+import { ServiceRecommendationDemo } from '@/components/genai/service-recommendation-demo';
 
 const useCases = [
   {
@@ -54,7 +54,7 @@ export default function AiAgentsPage() {
       <Section id="what-are-ai-agents" className="bg-card">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400/1A1A1A/E5E5E5?text=AI+Agents" alt="AI Agents in action" layout="fill" objectFit="cover" data-ai-hint="robot technology" />
+             <Image src="https://placehold.co/600x400/000000/FFFFFF?text=AI+Agents" alt="AI Agents in action" layout="fill" objectFit="cover" data-ai-hint="robot technology" />
           </div>
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">What Are AI Agents?</h2>
@@ -104,13 +104,13 @@ export default function AiAgentsPage() {
 
       <Section id="ai-demo" className="bg-card">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">See an AI Agent in Action</h2>
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Get a Personalized Recommendation</h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Experience how our AI can summarize complex documents. This is just one example of an AI agent's capabilities.
+            Describe your business challenge, and our AI will suggest how FrenGen's services can help address your specific needs.
           </p>
         </div>
         <div className="max-w-3xl mx-auto">
-          <CaseStudySummaryDemo />
+          <ServiceRecommendationDemo />
         </div>
       </Section>
 
