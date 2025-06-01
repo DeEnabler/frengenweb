@@ -40,6 +40,7 @@ const navLinks: NavLinkItem[] = [
 
 export default function Navbar() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [isUseCasesMenuOpen, setIsUseCasesMenuOpen] = useState(false);
   const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -48,7 +49,7 @@ export default function Navbar() {
   }, []);
   
   useEffect(() => {
-    setIsSheetOpen(false);
+    setIsSheetOpen(false); // Close mobile sheet on path change
   }, [pathname]);
 
   if (!isMounted) {
@@ -59,13 +60,44 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
-          <BotIcon className="h-7 w-7 text-primary" />
-          <span className="font-headline text-xl font-bold text-primary">FrenGen</span>
+          <BotIcon className="h-6 w-6 text-primary" /> {/* Slightly smaller icon */}
+          <span className="font-headline text-lg font-bold text-primary">FrenGen</span> {/* Slightly smaller text */}
         </Link>
 
         <nav className="hidden md:flex space-x-1 lg:space-x-2 items-center">
           {navLinks.map((link) => (
-            link.subLinks ? (
+            link.subLinks && link.label === 'Use Cases' ? (
+              <div 
+                key={link.label}
+                onMouseEnter={() => setIsUseCasesMenuOpen(true)}
+                onMouseLeave={() => setIsUseCasesMenuOpen(false)}
+                className="relative"
+              >
+                <DropdownMenu open={isUseCasesMenuOpen} onOpenChange={setIsUseCasesMenuOpen}>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      className={cn(
+                        "text-sm font-medium flex items-center",
+                        (link.subLinks.some(subLink => subLink.href === pathname) || isUseCasesMenuOpen) ? "text-primary hover:text-primary" : "text-foreground/70 hover:text-foreground"
+                      )}
+                    >
+                      {link.label}
+                      <ChevronDown className="ml-1 h-4 w-4 opacity-70" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-56 bg-popover/80 backdrop-blur-sm text-popover-foreground border-border/50">
+                    {link.subLinks.map((subLink) => (
+                      <DropdownMenuItem key={subLink.href} asChild className="cursor-pointer focus:bg-accent/50">
+                        <Link href={subLink.href!} className={cn(pathname === subLink.href && "font-semibold text-primary")}>
+                          {subLink.label}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            ) : link.subLinks ? ( // Fallback for other potential dropdowns (though none exist now)
               <DropdownMenu key={link.label}>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -117,8 +149,8 @@ export default function Navbar() {
               <div className="flex flex-col space-y-2">
                 <div className="flex justify-between items-center mb-4">
                     <Link href="/" className="flex items-center space-x-2">
-                        <BotIcon className="h-7 w-7 text-primary" />
-                        <span className="font-headline text-xl font-bold text-primary">FrenGen</span>
+                        <BotIcon className="h-6 w-6 text-primary" />
+                        <span className="font-headline text-lg font-bold text-primary">FrenGen</span>
                     </Link>
                     <SheetClose asChild>
                         <Button variant="ghost" size="icon">
