@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
@@ -6,18 +7,14 @@ import { Section } from '@/components/ui/section';
 import { FeatureCard } from '@/components/ui/feature-card';
 import { Bot, MessageCircle, Gamepad2, Users, Brain, Briefcase, ChevronRight, Layers, Waypoints } from 'lucide-react';
 import Image from 'next/image';
+import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 
 export default function HomePage() {
   return (
     <>
       <HeroSection
-        title={
-          <>
-            Innovate with <span className="text-primary">Frengen AI</span>:
-            <br />
-            Your Partner in Bespoke AI Solutions
-          </>
-        }
+        title={<TypewriterEffect />}
+        titleClassName="text-4xl font-headline font-bold tracking-tight sm:text-5xl lg:text-6xl"
         subtitle="We craft intelligent AI agents, dynamic chatbots, and immersive game characters to elevate your business and engage your users."
       >
         <Button asChild size="lg">
@@ -38,7 +35,7 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <FeatureCard
-            icon={<Bot className="w-10 h-10" />}
+            icon={<Bot className="w-10 h-10 text-primary" />}
             title="AI Agents for Automation"
             description="Automate complex tasks and improve business efficiency with our custom-built AI agents."
           >
@@ -47,7 +44,7 @@ export default function HomePage() {
             </Button>
           </FeatureCard>
           <FeatureCard
-            icon={<MessageCircle className="w-10 h-10" />}
+            icon={<MessageCircle className="w-10 h-10 text-primary" />}
             title="Intelligent Chatbots"
             description="Empower employees to explore company data seamlessly through intuitive conversational interfaces."
           >
@@ -56,7 +53,7 @@ export default function HomePage() {
             </Button>
           </FeatureCard>
           <FeatureCard
-            icon={<Gamepad2 className="w-10 h-10" />}
+            icon={<Gamepad2 className="w-10 h-10 text-primary" />}
             title="AI Game Characters"
             description="Enhance user engagement and retention with personalized, AI-driven characters for gaming applications."
           >
@@ -82,7 +79,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400/1A1A1A/E5E5E5?text=Custom+AI" alt="Custom AI Solutions" layout="fill" objectFit="cover" data-ai-hint="technology abstract" />
+             <Image src="https://placehold.co/600x400/000000/FFFFFF?text=Custom+AI" alt="Custom AI Solutions" layout="fill" objectFit="cover" data-ai-hint="technology abstract" />
           </div>
         </div>
       </Section>
@@ -136,7 +133,7 @@ export default function HomePage() {
       <Section className="bg-card">
          <div className="grid md:grid-cols-2 gap-12 items-center">
            <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400/1A1A1A/E5E5E5?text=Impact" alt="Real-world Impact" layout="fill" objectFit="cover" data-ai-hint="business success" />
+             <Image src="https://placehold.co/600x400/000000/FFFFFF?text=Impact" alt="Real-world Impact" layout="fill" objectFit="cover" data-ai-hint="business success" />
           </div>
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Real-World Impact</h2>
