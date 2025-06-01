@@ -29,7 +29,9 @@ export function HeroSection({
             {title}
           </h1>
         ) : (
-          title
+          <h1 className={cn("text-4xl font-headline font-bold tracking-tight sm:text-5xl lg:text-6xl", titleClassName)}>
+            {title}
+          </h1>
         )}
         {subtitle && (
           typeof subtitle === 'string' ? (
