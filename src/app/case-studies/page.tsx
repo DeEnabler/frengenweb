@@ -40,7 +40,7 @@ const caseStudies = [
   },
   {
     id: 3,
-    title: "AI-Powered Harmful Content Detection and Marketing Automation",
+    title: "AI Agents for Social Media Safety & Marketing Automation",
     client: "Social Impact & Brand Tech",
     problem: "Combating harmful content (specifically antisemitism) on social media while also leveraging these platforms for effective brand marketing automation.",
     solution: "Developed an innovative AI-driven system using graph databases to map and analyze social media data for real-time detection of antisemitic content. AI agents, integrated across multiple social media platforms, autonomously identified and responded to harmful posts. Simultaneously, the system streamlined marketing automation for several brands by optimizing content distribution and engagement strategies.",
