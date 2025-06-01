@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <BotIcon className="h-8 w-8 text-primary" />
-              <span className="font-headline text-xl font-bold text-primary">Frengen AI</span>
+              <span className="font-headline text-xl font-bold text-primary">FrenGen</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Delivering cutting-edge AI solutions for businesses worldwide.
@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-border/40 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} Frengen AI. All rights reserved.</p>
+          <p>&copy; {currentYear} FrenGen. All rights reserved.</p>
         </div>
       </div>
     </footer>

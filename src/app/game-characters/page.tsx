@@ -35,7 +35,7 @@ export default function GameCharactersPage() {
     <>
       <HeroSection
         title="AI Game Characters: Bringing Virtual Worlds to Life"
-        subtitle="Elevate player engagement and retention with Frengen AI's personalized, AI-driven characters for gaming applications, featuring dynamic interactions and adaptive personalities."
+        subtitle="Elevate player engagement and retention with FrenGen's personalized, AI-driven characters for gaming applications, featuring dynamic interactions and adaptive personalities."
       >
         <Button asChild size="lg">
           <Link href="/contact?subject=AI+Game+Character+Demo">Explore AI Character Solutions</Link>
@@ -50,7 +50,7 @@ export default function GameCharactersPage() {
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">The Next Generation of Interactive Storytelling</h2>
             <p className="mt-6 text-lg text-foreground/80">
-              Static, scripted NPCs are a thing of the past. Frengen AI leverages advanced artificial intelligence to create game characters that are truly alive. They learn, adapt, and react in ways that make every player's journey unique.
+              Static, scripted NPCs are a thing of the past. FrenGen leverages advanced artificial intelligence to create game characters that are truly alive. They learn, adapt, and react in ways that make every player's journey unique.
             </p>
             <p className="mt-4 text-lg text-foreground/80">
               Our AI characters can understand player intent, remember past interactions, and exhibit complex emotional responses, leading to unprecedented levels of immersion and engagement in your games.
@@ -117,7 +117,7 @@ export default function GameCharactersPage() {
       <Section id="cta-game-ai" className="text-center">
         <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Create Living Game Worlds?</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-          Partner with Frengen AI to integrate cutting-edge AI characters into your next gaming project.
+          Partner with FrenGen to integrate cutting-edge AI characters into your next gaming project.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">

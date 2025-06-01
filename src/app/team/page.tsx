@@ -24,7 +24,7 @@ const teamMembers: TeamMember[] = [
     role: "Chief AI Scientist (ML PhD)",
     bio: "Evelyn leads our research division, pushing the boundaries of LLM applications and algorithm development. Her work focuses on creating truly intelligent and adaptive AI systems.",
     expertise: ["Machine Learning", "NLP", "Algorithm Design", "LLM Research"],
-    image: "https://placehold.co/300x300/CCCCCC/000000?text=ER",
+    image: "https://placehold.co/300x300/000000/FFFFFF?text=ER",
     imageHint: "scientist woman",
     linkedin: "#",
   },
@@ -34,7 +34,7 @@ const teamMembers: TeamMember[] = [
     role: "Lead Backend Architect (Ex-Big Tech)",
     bio: "With over a decade of experience at leading tech companies, Marcus designs and maintains the robust backend infrastructure powering our SaaS products and AI solutions.",
     expertise: ["Distributed Systems", "Cloud Computing", "SaaS Architecture", "API Design"],
-    image: "https://placehold.co/300x300/CCCCCC/000000?text=MC",
+    image: "https://placehold.co/300x300/000000/FFFFFF?text=MC",
     imageHint: "engineer man",
     linkedin: "#",
   },
@@ -44,7 +44,7 @@ const teamMembers: TeamMember[] = [
     role: "Senior Conversational AI Designer",
     bio: "Aisha specializes in crafting intuitive and engaging user experiences for our chatbots and AI agents, ensuring seamless human-AI interaction.",
     expertise: ["Conversation Design", "UX/UI for AI", "Prompt Engineering", "User Research"],
-    image: "https://placehold.co/300x300/CCCCCC/000000?text=AK",
+    image: "https://placehold.co/300x300/000000/FFFFFF?text=AK",
     imageHint: "designer woman",
     linkedin: "#",
   },
@@ -54,7 +54,7 @@ const teamMembers: TeamMember[] = [
     role: "AI Developer (Student Innovator)",
     bio: "Leo brings fresh perspectives and cutting-edge skills from his ongoing computer science studies, contributing to innovative prototypes and LLM applications.",
     expertise: ["Python", "Langchain", "RAG Systems", "Rapid Prototyping"],
-    image: "https://placehold.co/300x300/CCCCCC/000000?text=LM",
+    image: "https://placehold.co/300x300/000000/FFFFFF?text=LM",
     imageHint: "student developer",
     linkedin: "#",
   },
@@ -64,7 +64,7 @@ export default function TeamPage() {
   return (
     <>
       <HeroSection
-        title="Meet the Minds Behind Frengen AI"
+        title="Meet the Minds Behind FrenGen"
         subtitle="Our global team is a powerhouse of diverse expertise, blending seasoned ex-big tech engineers, ambitious student developers, and leading machine learning PhDs, all dedicated to delivering cutting-edge AI solutions."
       />
 
@@ -73,7 +73,7 @@ export default function TeamPage() {
           <Users className="w-16 h-16 text-primary mx-auto mb-6" />
           <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">A Synergy of Experience and Innovation</h2>
           <p className="mt-6 text-lg text-foreground/80">
-            At Frengen AI, we believe that the best solutions arise from collaboration and diverse perspectives. Our team members bring a wealth of knowledge from academia and industry, working together to tackle complex AI challenges and build impactful products. We foster a culture of continuous learning and innovation, ensuring we stay at the forefront of AI development.
+            At FrenGen, we believe that the best solutions arise from collaboration and diverse perspectives. Our team members bring a wealth of knowledge from academia and industry, working together to tackle complex AI challenges and build impactful products. We foster a culture of continuous learning and innovation, ensuring we stay at the forefront of AI development.
           </p>
         </div>
       </Section>

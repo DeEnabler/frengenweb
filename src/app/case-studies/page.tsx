@@ -18,7 +18,7 @@ const caseStudies = [
       "15% improvement in conversion rates.",
       "Significant reduction in cart abandonment.",
     ],
-    image: "https://placehold.co/600x400/CCCCCC/000000?text=Retail+Success",
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=Retail+Success",
     imageHint: "retail success"
   },
   {
@@ -32,7 +32,7 @@ const caseStudies = [
       "10% decrease in material waste.",
       "Improved overall equipment effectiveness (OEE).",
     ],
-    image: "https://placehold.co/600x400/CCCCCC/000000?text=Factory+AI",
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=Factory+AI",
     imageHint: "factory automation"
   },
   {
@@ -46,7 +46,7 @@ const caseStudies = [
       "Player session length extended by 15 minutes on average.",
       "20% rise in in-app purchase revenue.",
     ],
-    image: "https://placehold.co/600x400/CCCCCC/000000?text=Game+Impact",
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=Game+Impact",
     imageHint: "gaming success"
   },
 ];
@@ -54,18 +54,18 @@ const caseStudies = [
 const testimonials = [
   {
     id: 1,
-    quote: "Frengen AI's solution transformed our customer engagement. Their team was incredibly knowledgeable and supportive throughout the process.",
+    quote: "FrenGen's solution transformed our customer engagement. Their team was incredibly knowledgeable and supportive throughout the process.",
     author: "Jane Doe",
     role: "CMO, RetailGiant Inc.",
-    avatar: "https://placehold.co/100x100/CCCCCC/000000?text=JD",
+    avatar: "https://placehold.co/100x100/000000/FFFFFF?text=JD",
     avatarHint: "person portrait"
   },
   {
     id: 2,
-    quote: "The AI agents developed by Frengen AI have given us a significant competitive edge. We're seeing real ROI.",
+    quote: "The AI agents developed by FrenGen have given us a significant competitive edge. We're seeing real ROI.",
     author: "John Smith",
     role: "COO, AutoParts Ltd.",
-    avatar: "https://placehold.co/100x100/CCCCCC/000000?text=JS",
+    avatar: "https://placehold.co/100x100/000000/FFFFFF?text=JS",
     avatarHint: "person ceo"
   },
 ];
@@ -75,7 +75,7 @@ export default function CaseStudiesPage() {
     <>
       <HeroSection
         title="Real-World Impact: Our Success Stories"
-        subtitle="Discover how Frengen AI has partnered with businesses to deliver tangible results and drive innovation through bespoke AI solutions."
+        subtitle="Discover how FrenGen has partnered with businesses to deliver tangible results and drive innovation through bespoke AI solutions."
       />
 
       <Section id="case-studies-list">
@@ -105,7 +105,7 @@ export default function CaseStudiesPage() {
                       <ul className="list-none space-y-1 mt-1">
                         {study.results.map((result, index) => (
                           <li key={index} className="flex items-start text-sm text-muted-foreground">
-                            <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" /> {/* This green might need to become primary or a gray */}
+                            <CheckCircle className="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                             {result}
                           </li>
                         ))}
@@ -157,7 +157,7 @@ export default function CaseStudiesPage() {
       <Section id="cta-case-studies" className="text-center">
         <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Write Your Success Story?</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-          Partner with Frengen AI and let's build an innovative solution that drives remarkable results for your business.
+          Partner with FrenGen and let's build an innovative solution that drives remarkable results for your business.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">

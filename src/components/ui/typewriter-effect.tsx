@@ -14,7 +14,7 @@ const DELETING_SPEED_MS = 70;
 const PHRASE_PAUSE_MS = 1500;
 const INTER_PHRASE_PAUSE_MS = 750;
 const INITIAL_CLIENT_DELAY_MS = 100; // Small delay before clearing fallback and starting effect on client
-const FALLBACK_TEXT = "Frengen.ai: Custom AI Solutions for Your Business";
+const FALLBACK_TEXT = "FrenGen.ai: Custom AI Solutions for Your Business";
 
 interface TypewriterEffectProps {
   className?: string; // Applied to the main span wrapping text and cursor

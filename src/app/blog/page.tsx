@@ -12,7 +12,7 @@ const placeholderPosts = [
     title: "The Future of AI in Business Automation",
     date: "October 26, 2023",
     excerpt: "Exploring how AI agents are set to revolutionize workflows and efficiency across various industries.",
-    image: "https://placehold.co/600x400/CCCCCC/000000?text=AI+Future",
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=AI+Future",
     imageHint: "technology abstract"
   },
   {
@@ -20,7 +20,7 @@ const placeholderPosts = [
     title: "Unlocking Data Insights with Conversational AI",
     date: "November 5, 2023",
     excerpt: "A deep dive into how intelligent chatbots are making company data more accessible and actionable.",
-    image: "https://placehold.co/600x400/CCCCCC/000000?text=Data+Chat",
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=Data+Chat",
     imageHint: "data analytics"
   },
   {
@@ -28,7 +28,7 @@ const placeholderPosts = [
     title: "Crafting Believable AI Characters for Immersive Gaming",
     date: "November 15, 2023",
     excerpt: "Techniques and considerations for developing AI-driven game characters that enhance player engagement.",
-    image: "https://placehold.co/600x400/CCCCCC/000000?text=Game+Dev",
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=Game+Dev",
     imageHint: "gaming code"
   }
 ];
@@ -37,7 +37,7 @@ export default function BlogPage() {
   return (
     <>
       <HeroSection
-        title="Frengen AI Insights & Innovations"
+        title="FrenGen Insights & Innovations"
         subtitle="Stay updated with the latest trends, thoughts, and breakthroughs in artificial intelligence from our team of experts. Our blog is coming soon!"
       >
         <Button variant="outline" size="lg" disabled>

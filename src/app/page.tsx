@@ -68,7 +68,7 @@ export default function HomePage() {
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Tailored AI for Your Unique Needs</h2>
             <p className="mt-6 text-lg text-foreground/80">
-              At Frengen AI, we understand that one size doesn't fit all. We specialize in developing bespoke AI solutions and providing expert consultancy services, meticulously designed to meet the unique challenges and objectives of your business, whether you're a startup or an enterprise.
+              At FrenGen, we understand that one size doesn't fit all. We specialize in developing bespoke AI solutions and providing expert consultancy services, meticulously designed to meet the unique challenges and objectives of your business, whether you're a startup or an enterprise.
             </p>
             <div className="mt-8">
               <Button asChild size="lg">
@@ -136,7 +136,7 @@ export default function HomePage() {
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Real-World Impact</h2>
             <p className="mt-6 text-lg text-foreground/80">
-              See how Frengen AI has empowered businesses like yours to achieve remarkable results. Our case studies showcase the tangible benefits of our AI solutions.
+              See how FrenGen has empowered businesses like yours to achieve remarkable results. Our case studies showcase the tangible benefits of our AI solutions.
             </p>
             <div className="mt-8">
               <Button asChild variant="outline">
@@ -151,7 +151,7 @@ export default function HomePage() {
       <Section className="bg-primary text-primary-foreground text-center">
         <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Ready to Transform Your Business with AI?</h2>
         <p className="mt-6 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-          Let's discuss how Frengen AI can help you unlock new possibilities and drive innovation.
+          Let's discuss how FrenGen can help you unlock new possibilities and drive innovation.
         </p>
         <div className="mt-10">
           <Button size="lg" variant="secondary" asChild className="hover:bg-secondary/90">

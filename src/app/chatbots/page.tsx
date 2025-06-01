@@ -35,7 +35,7 @@ export default function ChatbotsPage() {
     <>
       <HeroSection
         title="Intelligent Chatbots: Unlock Your Company's Data Potential"
-        subtitle="Empower your employees with Frengen AI's intelligent chatbots, enabling seamless exploration and interaction with company data through intuitive conversational interfaces."
+        subtitle="Empower your employees with FrenGen's intelligent chatbots, enabling seamless exploration and interaction with company data through intuitive conversational interfaces."
       >
         <Button asChild size="lg">
           <Link href="/contact?subject=Chatbot+Demo">Request a Chatbot Demo</Link>
@@ -50,7 +50,7 @@ export default function ChatbotsPage() {
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Conversational Access to Insights</h2>
             <p className="mt-6 text-lg text-foreground/80">
-              Traditional data retrieval can be time-consuming and require specialized skills. Frengen AI's intelligent chatbots break down these barriers, allowing any employee to access and understand company information quickly and efficiently.
+              Traditional data retrieval can be time-consuming and require specialized skills. FrenGen's intelligent chatbots break down these barriers, allowing any employee to access and understand company information quickly and efficiently.
             </p>
             <p className="mt-4 text-lg text-foreground/80">
               Imagine instantly getting answers to complex questions about sales figures, project statuses, or HR policies, all through a simple chat interface. That's the power our chatbots deliver.
@@ -117,7 +117,7 @@ export default function ChatbotsPage() {
       <Section id="cta-chatbots" className="text-center">
         <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Revolutionize Data Interaction?</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-          Contact Frengen AI to learn how our intelligent chatbots can be tailored to your organization's specific data and needs.
+          Contact FrenGen to learn how our intelligent chatbots can be tailored to your organization's specific data and needs.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">

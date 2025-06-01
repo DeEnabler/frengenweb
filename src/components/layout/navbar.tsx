@@ -44,7 +44,7 @@ export default function Navbar() {
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
           <BotIcon className="h-8 w-8 text-primary" />
-          <span className="font-headline text-2xl font-bold text-primary">Frengen AI</span>
+          <span className="font-headline text-2xl font-bold text-primary">FrenGen</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -78,7 +78,7 @@ export default function Navbar() {
                 <div className="flex justify-between items-center mb-4">
                     <Link href="/" className="flex items-center space-x-2">
                         <BotIcon className="h-7 w-7 text-primary" />
-                        <span className="font-headline text-xl font-bold text-primary">Frengen AI</span>
+                        <span className="font-headline text-xl font-bold text-primary">FrenGen</span>
                     </Link>
                     <SheetClose asChild>
                         <Button variant="ghost" size="icon">

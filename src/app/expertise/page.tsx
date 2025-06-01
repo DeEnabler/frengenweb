@@ -67,7 +67,7 @@ export default function ExpertisePage() {
     <>
       <HeroSection
         title="Our Technical Prowess in AI Innovation"
-        subtitle="Frengen AI combines deep technical expertise with a passion for research to deliver cutting-edge AI solutions. Explore our capabilities across the AI development lifecycle."
+        subtitle="FrenGen combines deep technical expertise with a passion for research to deliver cutting-edge AI solutions. Explore our capabilities across the AI development lifecycle."
       />
 
       <Section id="expertise-grid">
@@ -97,7 +97,7 @@ export default function ExpertisePage() {
         <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Our Approach to AI Development</h2>
             <p className="mt-6 text-lg text-foreground/80">
-                At Frengen AI, we believe in a client-centric and research-driven approach. We start by understanding your unique challenges and goals. Then, leveraging our deep technical knowledge and the latest advancements in AI, we architect and build solutions that are not only technologically advanced but also practical, scalable, and impactful. Our commitment is to transform your vision into reality with AI that works for you.
+                At FrenGen, we believe in a client-centric and research-driven approach. We start by understanding your unique challenges and goals. Then, leveraging our deep technical knowledge and the latest advancements in AI, we architect and build solutions that are not only technologically advanced but also practical, scalable, and impactful. Our commitment is to transform your vision into reality with AI that works for you.
             </p>
         </div>
       </Section>

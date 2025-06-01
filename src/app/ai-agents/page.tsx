@@ -44,7 +44,7 @@ export default function AiAgentsPage() {
     <>
       <HeroSection
         title="AI Agents: Automate Complexity, Amplify Efficiency"
-        subtitle="Discover how Frengen AI's intelligent agents can revolutionize your business operations, streamline workflows, and unlock new levels of productivity."
+        subtitle="Discover how FrenGen's intelligent agents can revolutionize your business operations, streamline workflows, and unlock new levels of productivity."
       >
         <Button asChild size="lg">
           <Link href="/contact?subject=AI+Agent+Demo">Request an AI Agent Demo</Link>
@@ -59,7 +59,7 @@ export default function AiAgentsPage() {
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">What Are AI Agents?</h2>
             <p className="mt-6 text-lg text-foreground/80">
-              AI agents are sophisticated software entities designed to perform tasks autonomously on behalf of users or other programs. They perceive their environment, make decisions, and take actions to achieve specific goals. At Frengen AI, we build custom agents that integrate seamlessly into your existing systems, tackling complex processes with precision and intelligence.
+              AI agents are sophisticated software entities designed to perform tasks autonomously on behalf of users or other programs. They perceive their environment, make decisions, and take actions to achieve specific goals. At FrenGen, we build custom agents that integrate seamlessly into your existing systems, tackling complex processes with precision and intelligence.
             </p>
             <p className="mt-4 text-lg text-foreground/80">
               From automating routine administrative work to handling intricate data analysis and customer interactions, our AI agents are engineered to learn, adapt, and deliver consistent results.
@@ -90,7 +90,7 @@ export default function AiAgentsPage() {
       
       <Section id="benefits" className="bg-muted/50">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Key Benefits of Frengen AI Agents</h2>
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Key Benefits of FrenGen AI Agents</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit) => (
@@ -117,7 +117,7 @@ export default function AiAgentsPage() {
       <Section id="cta" className="text-center">
         <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Empower Your Business with AI Agents?</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-          Let's discuss your specific automation challenges and how Frengen AI can design the perfect agent solution for you.
+          Let's discuss your specific automation challenges and how FrenGen can design the perfect agent solution for you.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">

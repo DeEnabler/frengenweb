@@ -85,7 +85,7 @@ export default function ContactPage() {
   return (
     <>
       <HeroSection
-        title="Get in Touch with Frengen AI"
+        title="Get in Touch with FrenGen"
         subtitle="We're excited to hear about your AI aspirations. Whether you're looking for a custom solution, consultancy, or just want to learn more, reach out to us."
       />
 

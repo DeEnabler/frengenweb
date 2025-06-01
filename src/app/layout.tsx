@@ -5,8 +5,8 @@ import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'Frengen AI - Innovative AI Solutions',
-  description: 'Frengen AI delivers bespoke AI agents, intelligent chatbots, and AI-driven game characters to transform businesses and enhance user experiences.',
+  title: 'FrenGen - Innovative AI Solutions',
+  description: 'FrenGen delivers bespoke AI agents, intelligent chatbots, and AI-driven game characters to transform businesses and enhance user experiences.',
 };
 
 export default function RootLayout({
