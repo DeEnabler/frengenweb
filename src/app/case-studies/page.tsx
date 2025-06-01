@@ -25,6 +25,21 @@ const caseStudies = [
   },
   {
     id: 2,
+    title: "Personalized AI Character System for Dynamic User Engagement",
+    client: "Leading Interactive Entertainment Platform",
+    problem: "The need for highly distinct, engaging AI-driven characters with unique personalities and conversational styles that can be generated and scaled efficiently.",
+    solution: "Developed a robust system leveraging LLM frameworks (Langchain, RAG) to dynamically generate unique AI characters with distinct background stories and conversational styles. Combined prompt engineering and conversational AI design for contextually rich, authentic interactions, supported by a scalable backend for real-time narrative profile generation.",
+    results: [
+      "Successfully delivered a system capable of generating a wide array of unique AI characters.",
+      "Enhanced user engagement through deeply personalized and adaptive character interactions.",
+      "Provided a scalable and performant backend for real-time generation and delivery of diverse narrative profiles.",
+      "Demonstrated expertise in creating innovative, custom AI solutions for dynamic, user-focused applications.",
+    ],
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=AI+Characters",
+    imageHint: "ai characters"
+  },
+  {
+    id: 3,
     title: "Streamlining Manufacturing Operations via AI Agents",
     client: "AutoParts Ltd.",
     problem: "Inefficient production scheduling and high defect rates.",
@@ -38,7 +53,7 @@ const caseStudies = [
     imageHint: "factory automation"
   },
   {
-    id: 3,
+    id: 4,
     title: "Enhancing Player Engagement in Mobile Gaming",
     client: "PixelPlay Games",
     problem: "Low player retention and difficulty in monetizing free-to-play game.",
@@ -58,7 +73,7 @@ const testimonials = [
     id: 1,
     quote: "FrenGen's solution transformed our customer engagement. Their team was incredibly knowledgeable and supportive throughout the process.",
     author: "Jane Doe",
-    role: "CMO, RetailGiant Inc.", // This could be updated if a Myosin testimonial is available
+    role: "CMO, RetailGiant Inc.", 
     avatar: "https://placehold.co/100x100/000000/FFFFFF?text=JD",
     avatarHint: "person portrait"
   },
