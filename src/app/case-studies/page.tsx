@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
@@ -9,17 +10,18 @@ import Image from 'next/image';
 const caseStudies = [
   {
     id: 1,
-    title: "Boosting E-commerce Sales with AI Personalization",
-    client: "RetailGiant Inc.",
-    problem: "Stagnant sales and low conversion rates on their e-commerce platform.",
-    solution: "Implemented an AI-driven recommendation engine and personalized user journey chatbots.",
+    title: "Streamlining Global Communication for Myosin.xyz with AI Chatbots",
+    client: "Myosin.xyz",
+    problem: "Managing efficient communication and knowledge sharing for over 150 remote employees distributed globally, often facing challenges with time zone differences and team member availability.",
+    solution: "Designed and deployed an intelligent chatbot integrated with Slack. The chatbot utilizes Retrieval-Augmented Generation (RAG) to enable employees to interact with AI-powered representations of their colleagues, allowing them to \"catch up\" on data and project updates asynchronously.",
     results: [
-      "25% increase in average order value.",
-      "15% improvement in conversion rates.",
-      "Significant reduction in cart abandonment.",
+      "Significantly streamlined communication for 150+ employees across diverse time zones.",
+      "Enhanced asynchronous knowledge sharing and information retrieval.",
+      "Reduced project delays by enabling access to crucial information even when team members are unavailable.",
+      "Improved overall team productivity and collaboration within the familiar Slack environment.",
     ],
-    image: "https://placehold.co/600x400/000000/FFFFFF?text=Retail+Success",
-    imageHint: "retail success"
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=Myosin+Slackbot",
+    imageHint: "communication team"
   },
   {
     id: 2,
@@ -56,7 +58,7 @@ const testimonials = [
     id: 1,
     quote: "FrenGen's solution transformed our customer engagement. Their team was incredibly knowledgeable and supportive throughout the process.",
     author: "Jane Doe",
-    role: "CMO, RetailGiant Inc.",
+    role: "CMO, RetailGiant Inc.", // This could be updated if a Myosin testimonial is available
     avatar: "https://placehold.co/100x100/000000/FFFFFF?text=JD",
     avatarHint: "person portrait"
   },
