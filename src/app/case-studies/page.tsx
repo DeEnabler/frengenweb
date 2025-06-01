@@ -40,6 +40,22 @@ const caseStudies = [
   },
   {
     id: 3,
+    title: "AI-Powered Harmful Content Detection and Marketing Automation",
+    client: "Social Impact & Brand Tech",
+    problem: "Combating harmful content (specifically antisemitism) on social media while also leveraging these platforms for effective brand marketing automation.",
+    solution: "Developed an innovative AI-driven system using graph databases to map and analyze social media data for real-time detection of antisemitic content. AI agents, integrated across multiple social media platforms, autonomously identified and responded to harmful posts. Simultaneously, the system streamlined marketing automation for several brands by optimizing content distribution and engagement strategies.",
+    results: [
+      "Enabled real-time detection and counter-messaging for harmful social media content.",
+      "Improved online community safety through autonomous AI agent intervention.",
+      "Streamlined marketing automation processes for multiple brands.",
+      "Successfully demonstrated a dual-use AI system for social good and marketing efficiency.",
+      "Delivered a scalable solution combining graph analytics, AI agents, and social media integration.",
+    ],
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=Social+Safety+AI",
+    imageHint: "social media ai"
+  },
+  {
+    id: 4,
     title: "Streamlining Manufacturing Operations via AI Agents",
     client: "AutoParts Ltd.",
     problem: "Inefficient production scheduling and high defect rates.",
@@ -53,7 +69,7 @@ const caseStudies = [
     imageHint: "factory automation"
   },
   {
-    id: 4,
+    id: 5,
     title: "Enhancing Player Engagement in Mobile Gaming",
     client: "PixelPlay Games",
     problem: "Low player retention and difficulty in monetizing free-to-play game.",
