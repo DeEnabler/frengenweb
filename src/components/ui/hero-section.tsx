@@ -1,6 +1,8 @@
+
 import type { ReactNode } from 'react';
 import { Section } from '@/components/ui/section';
 import { cn } from '@/lib/utils';
+import MeshNetworkEffect from '@/components/effects/mesh-network-effect'; 
 
 interface HeroSectionProps {
   title: string | ReactNode;
@@ -22,8 +24,15 @@ export function HeroSection({
   centered = true,
 }: HeroSectionProps) {
   return (
-    <Section className={cn("bg-gradient-to-b from-background to-transparent pt-20 pb-16 md:pt-28 md:pb-24", className)}>
-      <div className={cn("max-w-3xl", centered && "mx-auto text-center")}>
+    <Section className={cn("relative bg-gradient-to-b from-background to-transparent pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden", className)}>
+      <MeshNetworkEffect 
+        className="opacity-20" // Made it more subtle
+        particleColorHsl="0 0% 60%" // Slightly darker particles
+        lineColorHsl="0 0% 30%"   // Slightly darker lines
+        mouseInfluenceRadius={100}
+        particleCount={50}
+      />
+      <div className={cn("relative z-10 max-w-3xl", centered && "mx-auto text-center")}>
         {typeof title === 'string' ? (
           <h1 className={cn("text-4xl font-headline font-bold tracking-tight sm:text-5xl lg:text-6xl", titleClassName)}>
             {title}
