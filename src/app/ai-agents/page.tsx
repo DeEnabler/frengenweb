@@ -54,8 +54,8 @@ export default function AiAgentsPage() {
 
       <Section id="what-are-ai-agents" className="bg-card">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400.png" alt="AI Agents in action" layout="fill" objectFit="cover" data-ai-hint="robot technology" />
+          <div className="flex items-center justify-center h-80 md:h-96 rounded-lg shadow-xl bg-card">
+             <Bot className="w-40 h-40 text-primary" />
           </div>
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">What Are AI Agents?</h2>

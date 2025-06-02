@@ -45,8 +45,8 @@ export default function GameCharactersPage() {
 
       <Section id="why-ai-characters" className="bg-card">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400.png" alt="AI Game Character" layout="fill" objectFit="cover" data-ai-hint="gaming character" />
+          <div className="flex items-center justify-center h-80 md:h-96 rounded-lg shadow-xl bg-card">
+             <Gamepad2 className="w-40 h-40 text-primary" />
           </div>
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">The Next Generation of Interactive Storytelling</h2>

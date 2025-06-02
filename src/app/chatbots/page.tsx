@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
 import { Section } from '@/components/ui/section';
 import { FeatureCard } from '@/components/ui/feature-card';
-import { MessageCircle, DatabaseZap, Search, ShieldCheck, ChevronRight } from 'lucide-react';
+import { MessageCircle, DatabaseZap, Search, ShieldCheck, BrainCircuit } from 'lucide-react';
 import Image from 'next/image';
 import { ChatbotInteractionDemo } from '@/components/genai/chatbot-interaction-demo';
 
@@ -45,8 +45,8 @@ export default function ChatbotsPage() {
 
       <Section id="why-chatbots" className="bg-card">
          <div className="grid md:grid-cols-2 gap-12 items-center">
-           <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400.png" alt="Intelligent Chatbot Interface" layout="fill" objectFit="cover" data-ai-hint="chatbot interface" />
+           <div className="flex items-center justify-center h-80 md:h-96 rounded-lg shadow-xl bg-card">
+             <MessageCircle className="w-40 h-40 text-primary" />
           </div>
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Conversational Access to Insights</h2>

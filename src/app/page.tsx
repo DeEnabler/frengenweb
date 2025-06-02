@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
 import { Section } from '@/components/ui/section';
 import { FeatureCard } from '@/components/ui/feature-card';
-import { Bot, MessageCircle, Gamepad2, Users, Brain, Briefcase, ChevronRight, Layers, Waypoints } from 'lucide-react';
+import { Bot, MessageCircle, Gamepad2, Users, Brain, Briefcase, ChevronRight, Layers, Waypoints, Lightbulb, Target } from 'lucide-react';
 import Image from 'next/image';
 import { TypewriterEffect } from '@/components/ui/typewriter-effect';
 
@@ -76,8 +76,8 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400.png" alt="Custom AI Solutions" layout="fill" objectFit="cover" data-ai-hint="technology abstract" />
+          <div className="flex items-center justify-center h-80 md:h-96 rounded-lg shadow-xl bg-card">
+             <Lightbulb className="w-40 h-40 text-primary" />
           </div>
         </div>
       </Section>
@@ -133,8 +133,8 @@ export default function HomePage() {
       {/* Case Studies Teaser */}
       <Section className="bg-card">
          <div className="grid md:grid-cols-2 gap-12 items-center">
-           <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400.png" alt="Real-world Impact" layout="fill" objectFit="cover" data-ai-hint="business success" />
+           <div className="flex items-center justify-center h-80 md:h-96 rounded-lg shadow-xl bg-card">
+             <Target className="w-40 h-40 text-primary" />
           </div>
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Real-World Impact</h2>
