@@ -77,7 +77,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400/000000/FFFFFF?text=Custom+AI" alt="Custom AI Solutions" layout="fill" objectFit="cover" data-ai-hint="technology abstract" />
+             <Image src="https://placehold.co/600x400.png" alt="Custom AI Solutions" layout="fill" objectFit="cover" data-ai-hint="technology abstract" />
           </div>
         </div>
       </Section>
@@ -134,7 +134,7 @@ export default function HomePage() {
       <Section className="bg-card">
          <div className="grid md:grid-cols-2 gap-12 items-center">
            <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400/000000/FFFFFF?text=Impact" alt="Real-world Impact" layout="fill" objectFit="cover" data-ai-hint="business success" />
+             <Image src="https://placehold.co/600x400.png" alt="Real-world Impact" layout="fill" objectFit="cover" data-ai-hint="business success" />
           </div>
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Real-World Impact</h2>

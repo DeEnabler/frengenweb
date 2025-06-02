@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
@@ -54,7 +55,7 @@ export default function AiAgentsPage() {
       <Section id="what-are-ai-agents" className="bg-card">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400/000000/FFFFFF?text=AI+Agents" alt="AI Agents in action" layout="fill" objectFit="cover" data-ai-hint="robot technology" />
+             <Image src="https://placehold.co/600x400.png" alt="AI Agents in action" layout="fill" objectFit="cover" data-ai-hint="robot technology" />
           </div>
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">What Are AI Agents?</h2>

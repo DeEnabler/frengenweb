@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
@@ -45,7 +46,7 @@ export default function ChatbotsPage() {
       <Section id="why-chatbots" className="bg-card">
          <div className="grid md:grid-cols-2 gap-12 items-center">
            <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
-             <Image src="https://placehold.co/600x400/1A1A1A/E5E5E5?text=Chatbots" alt="Intelligent Chatbot Interface" layout="fill" objectFit="cover" data-ai-hint="chatbot interface" />
+             <Image src="https://placehold.co/600x400.png" alt="Intelligent Chatbot Interface" layout="fill" objectFit="cover" data-ai-hint="chatbot interface" />
           </div>
           <div>
             <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Conversational Access to Insights</h2>
