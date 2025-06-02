@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
@@ -12,26 +13,42 @@ interface TeamMember {
   role: string;
   bio: string;
   expertise: string[];
-  image: string; // Should be a path like '/images/team/your-image.jpg'
-  imageHint: string; // For accessibility and AI search (e.g., "person smiling")
+  image: string; 
+  imageHint: string; 
   linkedin?: string;
 }
 
-// TODO: Add your real team members here.
-// For each member, ensure images are placed in the `public/images/team/` directory.
-// Example structure:
-// {
-//   id: 1,
-//   name: "Jane Doe",
-//   role: "Chief AI Scientist",
-//   bio: "Jane leads our AI research and development efforts, specializing in LLMs.",
-//   expertise: ["Machine Learning", "NLP", "LLM Research"],
-//   image: "/images/team/jane-doe.jpg", // Assumes jane-doe.jpg is in public/images/team/
-//   imageHint: "woman scientist",
-//   linkedin: "https://www.linkedin.com/in/janedoe",
-// },
 const teamMembers: TeamMember[] = [
-  // Add your team member objects here
+  {
+    id: 1,
+    name: "Nadav Rubinstein",
+    role: "Co-founder",
+    bio: "Nadav is a Machine Learning Researcher with significant experience at IBM, where he focused on advanced ML applications (Jul 2022 - Jul 2024). His expertise also includes deep learning research at Rafael Advanced Defense Systems and academic contributions as a Teaching Assistant at Technion for Machine Learning and Theory of Compilation. Nadav's strong research foundation is pivotal to FrenGen's innovative AI solutions.",
+    expertise: ["Machine Learning", "Deep Learning", "AI Research", "Algorithm Development", "Python"],
+    image: "/images/team/nadav-rubinstein.jpg",
+    imageHint: "man professional portrait",
+    // linkedin: "https://www.linkedin.com/in/nadavrubinstein", // Add LinkedIn URL if available
+  },
+  {
+    id: 2,
+    name: "Shlomi Gibly",
+    role: "Co-founder",
+    bio: "Shlomi is a Data Analyst with over two years of experience specializing in data research, analysis, and exploration. Proficient in SQL, R, and Python, he excels at translating complex data into actionable insights. Shlomi has a strong background in client interaction and delivering technical solutions, particularly within the gaming sector, aligning perfectly with FrenGen's AI-driven game character development.",
+    expertise: ["Data Analysis", "SQL", "Python", "R", "Client Solutions", "Gaming Analytics"],
+    image: "/images/team/shlomi-gibly.jpg",
+    imageHint: "man smiling professional",
+    // linkedin: "https://www.linkedin.com/in/shlomigibly", // Add LinkedIn URL if available
+  },
+  {
+    id: 3,
+    name: "Ofir Bar Tal",
+    role: "Co-founder",
+    bio: "Ofir brings a potent mix of academic research and industry experience to FrenGen. As a former Researcher at Tel Aviv University and a Data Scientist intern at Google (working on ML for Waze), he has a deep understanding of applying AI to real-world problems. His leadership as a Coding Team Lead in the Israel Defense Forces further enhances his analytical and problem-solving capabilities, crucial for developing FrenGen's bespoke AI solutions.",
+    expertise: ["Machine Learning", "Data Science", "Signal Processing", "AI Research", "Python", "Critical Thinking"],
+    image: "/images/team/ofir-bar-tal.jpg",
+    imageHint: "man tech professional",
+    // linkedin: "https://www.linkedin.com/in/ofirbartal", // Add LinkedIn URL if available
+  },
 ];
 
 export default function TeamPage() {
