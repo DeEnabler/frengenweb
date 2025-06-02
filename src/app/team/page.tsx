@@ -5,7 +5,7 @@ import { HeroSection } from '@/components/ui/hero-section';
 import { Section } from '@/components/ui/section';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
-import { Linkedin, Brain, Code, Users } from 'lucide-react';
+import { Linkedin, Users } from 'lucide-react';
 
 interface TeamMember {
   id: number;
@@ -20,6 +20,7 @@ interface TeamMember {
 
 // Ensure images are placed in public/images/team/
 // and that filenames (including extensions and casing) match exactly.
+// For example: '/images/team/nadav-rubinstein.jpg'
 const teamMembers: TeamMember[] = [
   {
     id: 1,
@@ -47,7 +48,7 @@ const teamMembers: TeamMember[] = [
     role: "Co-founder",
     bio: "Ofir combines academic research with practical AI application, drawing from his experience as a Data Scientist at Google (Waze). His expertise in ML and problem-solving drives FrenGen's bespoke LLM applications and custom AI solutions.",
     expertise: ["Machine Learning", "Data Science", "LLM Applications", "Bespoke AI", "Problem Solving"],
-    image: "/images/team/ofir-bar-tal.jpg",
+    image: "/images/team/ofir-bar-tal.jpg", // Please ensure this file exists at public/images/team/ofir-bar-tal.jpg (case-sensitive)
     imageHint: "man tech professional",
     // linkedin: "https://www.linkedin.com/in/ofirbartal",
   },
@@ -73,27 +74,27 @@ export default function TeamPage() {
 
       <Section id="team-grid" className="bg-muted/50">
         {teamMembers.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
             {teamMembers.map((member) => (
-              <Card key={member.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row">
-                <div className="sm:w-1/3 relative h-64 sm:h-auto min-h-[250px]">
+              <Card key={member.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row p-6 items-center sm:items-start">
+                <div className="relative w-32 h-32 rounded-full overflow-hidden flex-shrink-0 mb-4 sm:mb-0 sm:mr-6">
                   <Image
                     src={member.image}
                     alt={member.name}
                     layout="fill"
                     objectFit="cover"
                     data-ai-hint={member.imageHint}
-                    unoptimized={process.env.NODE_ENV === 'development'} // Helpful for local dev if issues persist
+                    unoptimized={process.env.NODE_ENV === 'development'} 
                   />
                 </div>
-                <div className="sm:w-2/3 p-6 flex flex-col justify-between">
+                <div className="flex flex-col flex-grow text-center sm:text-left">
                   <div>
                     <CardTitle className="font-headline text-2xl mb-1">{member.name}</CardTitle>
                     <CardDescription className="text-md text-primary font-semibold mb-3">{member.role}</CardDescription>
                     <p className="text-sm text-muted-foreground mb-4">{member.bio}</p>
                     <div className="mb-4">
                       <h4 className="text-sm font-semibold mb-1">Key Expertise:</h4>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
                         {member.expertise.map((skill) => (
                           <span key={skill} className="px-2 py-1 text-xs bg-primary/10 text-primary rounded-full">{skill}</span>
                         ))}
@@ -101,7 +102,7 @@ export default function TeamPage() {
                     </div>
                   </div>
                   {member.linkedin && (
-                    <Button variant="outline" size="sm" asChild>
+                     <Button variant="outline" size="sm" asChild className="mt-auto self-center sm:self-start">
                       <Link href={member.linkedin} target="_blank" rel="noopener noreferrer">
                         <Linkedin className="w-4 h-4 mr-2" /> LinkedIn Profile
                       </Link>
