@@ -13,7 +13,7 @@ import { Mail, Loader2 } from 'lucide-react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 
@@ -27,36 +27,39 @@ const contactFormSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
-export default function ContactPage() {
+function ContactFormContent() {
   const searchParams = useSearchParams();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [displayedInterest, setDisplayedInterest] = useState("General Inquiry");
 
   const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
-      interest: "", // Ensure default value for controlled Select
+      name: "",
+      email: "",
+      company: "",
+      interest: "General Inquiry",
+      message: "",
     }
   });
 
   useEffect(() => {
     setIsMounted(true);
     const subject = searchParams.get('subject');
-    const prefillInterest = (value: string) => {
+    let prefilledInterest = "General Inquiry";
+
+    if (subject) {
       const interests = ["AI Agents", "Intelligent Chatbots", "AI Game Characters", "Consultancy", "Careers", "General Inquiry"];
-      const matchedInterest = interests.find(interest => value.toLowerCase().includes(interest.toLowerCase().replace(/\s/g, '')));
+      const matchedInterest = interests.find(interest => subject.toLowerCase().includes(interest.toLowerCase().replace(/\s/g, '')));
       if (matchedInterest) {
-        setValue('interest', matchedInterest);
-      } else {
-         setValue('interest', 'General Inquiry');
+        prefilledInterest = matchedInterest;
       }
     }
-    if (subject) {
-       prefillInterest(subject);
-    } else {
-       setValue('interest', 'General Inquiry');
-    }
+    
+    setValue('interest', prefilledInterest, { shouldValidate: true });
+    setDisplayedInterest(prefilledInterest);
 
   }, [searchParams, setValue]);
 
@@ -72,7 +75,8 @@ export default function ContactPage() {
       description: "Thank you for contacting us. We'll be in touch soon.",
     });
     reset();
-    setValue('interest', 'General Inquiry'); // Reset select after submission
+    setValue('interest', 'General Inquiry'); 
+    setDisplayedInterest('General Inquiry');
   };
 
   if (!isMounted) {
@@ -116,8 +120,11 @@ export default function ContactPage() {
                 <div>
                   <Label htmlFor="interest">Area of Interest</Label>
                   <Select 
-                    onValueChange={(value) => setValue('interest', value, { shouldValidate: true })}
-                    defaultValue={searchParams.get('subject') ? (["AI Agents", "Intelligent Chatbots", "AI Game Characters", "Consultancy", "Careers", "General Inquiry"].find(interest => searchParams.get('subject')!.toLowerCase().includes(interest.toLowerCase().replace(/\s/g, ''))) || "General Inquiry") : "General Inquiry"}
+                    value={displayedInterest}
+                    onValueChange={(value) => {
+                      setValue('interest', value, { shouldValidate: true });
+                      setDisplayedInterest(value);
+                    }}
                   >
                     <SelectTrigger id="interest">
                       <SelectValue placeholder="Select an interest" />
@@ -172,5 +179,13 @@ export default function ContactPage() {
         </div>
       </Section>
     </>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div className="flex justify-center items-center min-h-screen"><Loader2 className="h-12 w-12 animate-spin text-primary" /></div>}>
+      <ContactFormContent />
+    </Suspense>
   );
 }
