@@ -97,7 +97,10 @@ export default function HomePage() {
             { icon: <Waypoints className="w-8 h-8 text-primary" />, title: "RAG Solutions", desc: "Scalable, data-driven AI systems." },
             { icon: <Brain className="w-8 h-8 text-primary" />, title: "Prompt Engineering", desc: "Optimized AI interactions." },
           ].map(item => (
-            <div key={item.title} className="p-6 bg-card rounded-lg shadow-md text-center">
+            <div 
+              key={item.title} 
+              className="p-6 bg-card rounded-lg shadow-md text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
+            >
               <div className="mb-4 inline-flex items-center justify-center p-3 bg-primary/10 rounded-full">{item.icon}</div>
               <h3 className="font-headline text-xl font-semibold mb-2">{item.title}</h3>
               <p className="text-sm text-muted-foreground">{item.desc}</p>
