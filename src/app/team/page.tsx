@@ -13,8 +13,8 @@ interface TeamMember {
   role: string;
   bio: string;
   expertise: string[];
-  image: string; 
-  imageHint: string; 
+  image: string;
+  imageHint: string;
   linkedin?: string;
 }
 
@@ -23,31 +23,31 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Nadav Rubinstein",
     role: "Co-founder",
-    bio: "Nadav is a Machine Learning Researcher with significant experience at IBM, where he focused on advanced ML applications (Jul 2022 - Jul 2024). His expertise also includes deep learning research at Rafael Advanced Defense Systems and academic contributions as a Teaching Assistant at Technion for Machine Learning and Theory of Compilation. Nadav's strong research foundation is pivotal to FrenGen's innovative AI solutions.",
-    expertise: ["Machine Learning", "Deep Learning", "AI Research", "Algorithm Development", "Python"],
+    bio: "Nadav, a Machine Learning Researcher, leverages his experience from IBM and Rafael Advanced Defense Systems in advanced ML and deep learning. His research acumen is key to developing FrenGen's cutting-edge AI agents and custom solutions.",
+    expertise: ["Machine Learning", "Deep Learning", "AI Research", "Custom AI", "AI Agents"],
     image: "/images/team/nadav-rubinstein.jpg",
     imageHint: "man professional portrait",
-    // linkedin: "https://www.linkedin.com/in/nadavrubinstein", // Add LinkedIn URL if available
+    // linkedin: "https://www.linkedin.com/in/nadavrubinstein",
   },
   {
     id: 2,
     name: "Shlomi Gibly",
     role: "Co-founder",
-    bio: "Shlomi is a Data Analyst with over two years of experience specializing in data research, analysis, and exploration. Proficient in SQL, R, and Python, he excels at translating complex data into actionable insights. Shlomi has a strong background in client interaction and delivering technical solutions, particularly within the gaming sector, aligning perfectly with FrenGen's AI-driven game character development.",
-    expertise: ["Data Analysis", "SQL", "Python", "R", "Client Solutions", "Gaming Analytics"],
+    bio: "Shlomi, a Data Analyst, excels in translating complex data into actionable insights using Python and SQL. His background in client solutions and gaming analytics directly supports FrenGen's intelligent chatbots and AI game character development.",
+    expertise: ["Data Analysis", "Python", "SQL", "Client Solutions", "Chatbots", "Game AI"],
     image: "/images/team/shlomi-gibly.jpg",
     imageHint: "man smiling professional",
-    // linkedin: "https://www.linkedin.com/in/shlomigibly", // Add LinkedIn URL if available
+    // linkedin: "https://www.linkedin.com/in/shlomigibly",
   },
   {
     id: 3,
     name: "Ofir Bar Tal",
     role: "Co-founder",
-    bio: "Ofir brings a potent mix of academic research and industry experience to FrenGen. As a former Researcher at Tel Aviv University and a Data Scientist intern at Google (working on ML for Waze), he has a deep understanding of applying AI to real-world problems. His leadership as a Coding Team Lead in the Israel Defense Forces further enhances his analytical and problem-solving capabilities, crucial for developing FrenGen's bespoke AI solutions.",
-    expertise: ["Machine Learning", "Data Science", "Signal Processing", "AI Research", "Python", "Critical Thinking"],
+    bio: "Ofir combines academic research with practical AI application, drawing from his experience as a Data Scientist at Google (Waze). His expertise in ML and problem-solving drives FrenGen's bespoke LLM applications and custom AI solutions.",
+    expertise: ["Machine Learning", "Data Science", "LLM Applications", "Bespoke AI", "Problem Solving"],
     image: "/images/team/ofir-bar-tal.jpg",
     imageHint: "man tech professional",
-    // linkedin: "https://www.linkedin.com/in/ofirbartal", // Add LinkedIn URL if available
+    // linkedin: "https://www.linkedin.com/in/ofirbartal",
   },
 ];
 
@@ -75,11 +75,11 @@ export default function TeamPage() {
             {teamMembers.map((member) => (
               <Card key={member.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row">
                 <div className="sm:w-1/3 relative h-64 sm:h-auto min-h-[250px]">
-                  <Image 
-                    src={member.image} 
-                    alt={member.name} 
-                    layout="fill" 
-                    objectFit="cover" 
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    layout="fill"
+                    objectFit="cover"
                     data-ai-hint={member.imageHint}
                   />
                 </div>
