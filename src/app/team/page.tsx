@@ -36,7 +36,7 @@ const teamMembers: TeamMember[] = [
     id: 2,
     name: "Shlomi Gibly",
     role: "Co-founder",
-    bio: "Shlomi, a Data Analyst, excels in translating complex data into actionable insights using Python and SQL. His background in client solutions and gaming analytics directly supports FrenGen's intelligent chatbots and AI game character development.",
+    bio: "Shlomi brings critical data expertise to FrenGen, specializing in transforming complex datasets into strategic assets for AI development. Proficient in Python, SQL, and R, he architects data-driven approaches that enhance the intelligence of our AI agents and the insights delivered by our chatbots. His background in client solutions and gaming analytics ensures our AI game characters are powered by deep, actionable insights, making him integral to the development of sophisticated AI-powered applications.",
     expertise: ["Data Analysis", "Python", "SQL", "Client Solutions", "Chatbots", "Game AI"],
     image: "/images/team/shlomi-gibly.jpg",
     imageHint: "man smiling professional",
