@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils';
 
 const PHRASES = [
   "Automate Tasks with AI Agents",
-  "Empower Employees with Smart Chatbots",
-  "Engage Users with Personalized Game Characters"
+  "Talk to Sleeping Colleagues",
+  "Bring Your Game Characters to Life"
 ];
 const TYPING_SPEED_MS = 120;
 const DELETING_SPEED_MS = 70;
