@@ -18,6 +18,8 @@ interface TeamMember {
   linkedin?: string;
 }
 
+// Ensure images are placed in public/images/team/
+// and that filenames (including extensions and casing) match exactly.
 const teamMembers: TeamMember[] = [
   {
     id: 1,
@@ -81,6 +83,7 @@ export default function TeamPage() {
                     layout="fill"
                     objectFit="cover"
                     data-ai-hint={member.imageHint}
+                    unoptimized={process.env.NODE_ENV === 'development'} // Helpful for local dev if issues persist
                   />
                 </div>
                 <div className="sm:w-2/3 p-6 flex flex-col justify-between">
@@ -111,7 +114,7 @@ export default function TeamPage() {
         ) : (
           <div className="text-center py-12">
             <p className="text-lg text-muted-foreground">Our team information is being updated. Please check back soon!</p>
-            <p className="text-sm text-muted-foreground mt-2">To add team members, please edit the <code>teamMembers</code> array in <code>src/app/team/page.tsx</code> and place images in <code>public/images/team/</code>.</p>
+            <p className="text-sm text-muted-foreground mt-2">To add team members, please edit the <code>teamMembers</code> array in <code>src/app/team/page.tsx</code> and place images in <code>public/images/team/</code>. Ensure filenames match exactly (case-sensitive).</p>
           </div>
         )}
       </Section>
