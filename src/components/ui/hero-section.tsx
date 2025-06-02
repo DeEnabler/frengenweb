@@ -26,9 +26,8 @@ export function HeroSection({
   return (
     <Section className={cn("relative bg-gradient-to-b from-background to-transparent pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden", className)}>
       <MeshNetworkEffect 
-        className="opacity-20" // Made it more subtle
-        particleColorHsl="0 0% 60%" // Slightly darker particles
-        lineColorHsl="0 0% 30%"   // Slightly darker lines
+        particleColorHsl="0 0% 100%" /* White for high contrast */
+        lineColorHsl="0 0% 80%"     /* Light gray for high contrast */
         mouseInfluenceRadius={100}
         particleCount={50}
       />
