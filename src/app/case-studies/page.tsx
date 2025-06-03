@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
 import { Section } from '@/components/ui/section';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
-import { CheckCircle, ChevronRight, Quote } from 'lucide-react';
+import { CheckCircle, ChevronRight, Quote, MessageSquare, Bot, ShieldCheck, Gamepad2 } from 'lucide-react';
 import Image from 'next/image';
 
 const caseStudies = [
@@ -20,7 +20,7 @@ const caseStudies = [
       "Reduced project delays by enabling access to crucial information even when team members are unavailable.",
       "Improved overall team productivity and collaboration within the familiar Slack environment.",
     ],
-    image: "https://placehold.co/600x400.png",
+    icon: MessageSquare,
     imageHint: "communication team"
   },
   {
@@ -35,7 +35,7 @@ const caseStudies = [
       "Provided a scalable and performant backend for real-time generation and delivery of diverse narrative profiles.",
       "Demonstrated expertise in creating innovative, custom AI solutions for dynamic, user-focused applications.",
     ],
-    image: "https://placehold.co/600x400.png",
+    icon: Bot,
     imageHint: "ai characters"
   },
   {
@@ -51,11 +51,11 @@ const caseStudies = [
       "Successfully demonstrated a dual-use AI system for social good and marketing efficiency.",
       "Delivered a scalable solution combining graph analytics, AI agents, and social media integration.",
     ],
-    image: "https://placehold.co/600x400.png",
+    icon: ShieldCheck,
     imageHint: "social media ai"
   },
   {
-    id: 5, // Renumbering is not strictly necessary but good practice if IDs are just for mapping
+    id: 5,
     title: "Enhancing Player Engagement in Mobile Gaming",
     client: "PixelPlay Games",
     problem: "Low player retention and difficulty in monetizing free-to-play game.",
@@ -65,7 +65,7 @@ const caseStudies = [
       "Player session length extended by 15 minutes on average.",
       "20% rise in in-app purchase revenue.",
     ],
-    image: "https://placehold.co/600x400.png",
+    icon: Gamepad2,
     imageHint: "gaming success"
   },
 ];
@@ -75,7 +75,7 @@ const testimonials = [
     id: 1,
     quote: "FrenGen's solution transformed our customer engagement. Their team was incredibly knowledgeable and supportive throughout the process.",
     author: "Jane Doe",
-    role: "CMO, RetailGiant Inc.", 
+    role: "CMO, RetailGiant Inc.",
     avatar: "https://placehold.co/100x100.png",
     avatarHint: "person portrait"
   },
@@ -99,47 +99,50 @@ export default function CaseStudiesPage() {
 
       <Section id="case-studies-list">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
-          {caseStudies.map((study) => (
-            <Card key={study.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col md:flex-row">
-              <div className="md:w-1/3 relative h-64 md:h-auto">
-                <Image src={study.image} alt={study.title} layout="fill" objectFit="cover" data-ai-hint={study.imageHint} />
-              </div>
-              <div className="md:w-2/3 flex flex-col">
-                <CardHeader>
-                  <CardTitle className="font-headline text-2xl">{study.title}</CardTitle>
-                  <CardDescription className="text-md text-primary">{study.client}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="space-y-3">
-                    <div>
-                      <h4 className="font-semibold">The Challenge:</h4>
-                      <p className="text-sm text-muted-foreground">{study.problem}</p>
+          {caseStudies.map((study) => {
+            const IconComponent = study.icon;
+            return (
+              <Card key={study.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col md:flex-row">
+                <div className="md:w-1/3 flex items-center justify-center bg-muted/30 p-8 h-64 md:h-auto min-h-[200px]" data-ai-hint={study.imageHint}>
+                  {IconComponent && <IconComponent className="w-32 h-32 text-primary" />}
+                </div>
+                <div className="md:w-2/3 flex flex-col">
+                  <CardHeader>
+                    <CardTitle className="font-headline text-2xl">{study.title}</CardTitle>
+                    <CardDescription className="text-md text-primary">{study.client}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <div className="space-y-3">
+                      <div>
+                        <h4 className="font-semibold">The Challenge:</h4>
+                        <p className="text-sm text-muted-foreground">{study.problem}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">Our Solution:</h4>
+                        <p className="text-sm text-muted-foreground">{study.solution}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">Key Results:</h4>
+                        <ul className="list-none space-y-1 mt-1">
+                          {study.results.map((result, index) => (
+                            <li key={index} className="flex items-start text-sm text-muted-foreground">
+                              <CheckCircle className="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                              {result}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold">Our Solution:</h4>
-                      <p className="text-sm text-muted-foreground">{study.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">Key Results:</h4>
-                      <ul className="list-none space-y-1 mt-1">
-                        {study.results.map((result, index) => (
-                          <li key={index} className="flex items-start text-sm text-muted-foreground">
-                            <CheckCircle className="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                            {result}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="link" className="px-0 text-primary">
-                    Read Full Study (Soon) <ChevronRight className="w-4 h-4 ml-1" />
-                  </Button>
-                </CardFooter>
-              </div>
-            </Card>
-          ))}
+                  </CardContent>
+                  <CardFooter>
+                    <Button variant="link" className="px-0 text-primary">
+                      Read Full Study (Soon) <ChevronRight className="w-4 h-4 ml-1" />
+                    </Button>
+                  </CardFooter>
+                </div>
+              </Card>
+            );
+          })}
         </div>
       </Section>
 
@@ -154,11 +157,11 @@ export default function CaseStudiesPage() {
                 <Quote className="w-8 h-8 text-primary mb-4" />
                 <p className="text-lg italic text-foreground/90 mb-6">"{testimonial.quote}"</p>
                 <div className="flex items-center">
-                  <Image 
-                    src={testimonial.avatar} 
-                    alt={testimonial.author} 
-                    width={48} 
-                    height={48} 
+                  <Image
+                    src={testimonial.avatar}
+                    alt={testimonial.author}
+                    width={48}
+                    height={48}
                     className="rounded-full mr-4"
                     data-ai-hint={testimonial.avatarHint}
                   />
