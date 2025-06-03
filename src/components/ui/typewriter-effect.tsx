@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 const PHRASES = [
   "Automate Tasks with AI Agents",
-  "Talk to Sleeping Colleagues",
+  "Talk to Artificial Teammates",
   "Bring Your Game Characters to Life"
 ];
 const TYPING_SPEED_MS = 120;
