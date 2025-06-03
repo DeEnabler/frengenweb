@@ -20,7 +20,7 @@ const caseStudies = [
       "Reduced project delays by enabling access to crucial information even when team members are unavailable.",
       "Improved overall team productivity and collaboration within the familiar Slack environment.",
     ],
-    image: "https://placehold.co/600x400/000000/FFFFFF?text=Myosin+Slackbot",
+    image: "https://placehold.co/600x400.png",
     imageHint: "communication team"
   },
   {
@@ -35,7 +35,7 @@ const caseStudies = [
       "Provided a scalable and performant backend for real-time generation and delivery of diverse narrative profiles.",
       "Demonstrated expertise in creating innovative, custom AI solutions for dynamic, user-focused applications.",
     ],
-    image: "https://placehold.co/600x400/000000/FFFFFF?text=AI+Characters",
+    image: "https://placehold.co/600x400.png",
     imageHint: "ai characters"
   },
   {
@@ -51,25 +51,11 @@ const caseStudies = [
       "Successfully demonstrated a dual-use AI system for social good and marketing efficiency.",
       "Delivered a scalable solution combining graph analytics, AI agents, and social media integration.",
     ],
-    image: "https://placehold.co/600x400/000000/FFFFFF?text=Social+Safety+AI",
+    image: "https://placehold.co/600x400.png",
     imageHint: "social media ai"
   },
   {
-    id: 4,
-    title: "Streamlining Manufacturing Operations via AI Agents",
-    client: "AutoParts Ltd.",
-    problem: "Inefficient production scheduling and high defect rates.",
-    solution: "Developed AI agents for predictive maintenance and real-time quality control.",
-    results: [
-      "20% reduction in machine downtime.",
-      "10% decrease in material waste.",
-      "Improved overall equipment effectiveness (OEE).",
-    ],
-    image: "https://placehold.co/600x400/000000/FFFFFF?text=Factory+AI",
-    imageHint: "factory automation"
-  },
-  {
-    id: 5,
+    id: 5, // Renumbering is not strictly necessary but good practice if IDs are just for mapping
     title: "Enhancing Player Engagement in Mobile Gaming",
     client: "PixelPlay Games",
     problem: "Low player retention and difficulty in monetizing free-to-play game.",
@@ -79,7 +65,7 @@ const caseStudies = [
       "Player session length extended by 15 minutes on average.",
       "20% rise in in-app purchase revenue.",
     ],
-    image: "https://placehold.co/600x400/000000/FFFFFF?text=Game+Impact",
+    image: "https://placehold.co/600x400.png",
     imageHint: "gaming success"
   },
 ];
@@ -90,7 +76,7 @@ const testimonials = [
     quote: "FrenGen's solution transformed our customer engagement. Their team was incredibly knowledgeable and supportive throughout the process.",
     author: "Jane Doe",
     role: "CMO, RetailGiant Inc.", 
-    avatar: "https://placehold.co/100x100/000000/FFFFFF?text=JD",
+    avatar: "https://placehold.co/100x100.png",
     avatarHint: "person portrait"
   },
   {
@@ -98,7 +84,7 @@ const testimonials = [
     quote: "The AI agents developed by FrenGen have given us a significant competitive edge. We're seeing real ROI.",
     author: "John Smith",
     role: "COO, AutoParts Ltd.",
-    avatar: "https://placehold.co/100x100/000000/FFFFFF?text=JS",
+    avatar: "https://placehold.co/100x100.png",
     avatarHint: "person ceo"
   },
 ];
