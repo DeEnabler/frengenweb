@@ -1,24 +1,24 @@
-
 "use client";
-
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 const PHRASES = [
-  "Automate Tasks with AI Agents",
-  "Talk to Artificial Teammates",
-  "Bring Your Game Characters to Life"
+  "AI Agents for Small Businesses",
+  "Fast, Beautiful Websites for SMBs",
+  "Real AI That Actually Saves Money"
 ];
+
 const TYPING_SPEED_MS = 120;
 const DELETING_SPEED_MS = 70;
 const PHRASE_PAUSE_MS = 1500;
 const INTER_PHRASE_PAUSE_MS = 750;
-const INITIAL_CLIENT_DELAY_MS = 100; // Small delay before clearing fallback and starting effect on client
-const FALLBACK_TEXT = "FrenGen.ai: Custom AI Solutions for Your Business";
+const INITIAL_CLIENT_DELAY_MS = 100;
+
+const FALLBACK_TEXT = "FrenGen: Practical AI for Small & Medium Businesses";
 
 interface TypewriterEffectProps {
-  className?: string; // Applied to the main span wrapping text and cursor
-  cursorClassName?: string; // Specific class for the cursor span
+  className?: string;
+  cursorClassName?: string;
 }
 
 export function TypewriterEffect({ className, cursorClassName }: TypewriterEffectProps) {
@@ -28,8 +28,7 @@ export function TypewriterEffect({ className, cursorClassName }: TypewriterEffec
   const [isDeleting, setIsDeleting] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
-  const [isEffectLogicActive, setIsEffectLogicActive] = useState(false); // Controls when the typing logic actually runs
-
+  const [isEffectLogicActive, setIsEffectLogicActive] = useState(false);
   const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
 
   const clearAllTimeouts = () => {
@@ -37,75 +36,61 @@ export function TypewriterEffect({ className, cursorClassName }: TypewriterEffec
     timeoutsRef.current = [];
   };
 
-  // Effect for client-side mount and initialization
   useEffect(() => {
     setIsMounted(true);
-    
     const initTimeout = setTimeout(() => {
       if (document.visibilityState === 'visible') {
-        setDisplayText(""); // Clear fallback text to start fresh
+        setDisplayText("");
         setCharIndex(0);
         setCurrentPhraseIndex(0);
         setIsDeleting(false);
-        setIsEffectLogicActive(true); // Allow the main typing effect to start
+        setIsEffectLogicActive(true);
       }
     }, INITIAL_CLIENT_DELAY_MS);
-    timeoutsRef.current.push(initTimeout);
+    return () => clearTimeout(initTimeout);
+  }, []);
 
-    return () => {
-      clearAllTimeouts();
-    };
-  }, []); // Runs once on mount
-
-  // Main typing/deleting logic
   useEffect(() => {
-    if (!isMounted || !isEffectLogicActive) {
-      // If not mounted or effect logic not yet active, do nothing.
-      // Fallback text is handled by initial state.
-      return;
-    }
-
-    clearAllTimeouts(); 
+    if (!isEffectLogicActive && !isMounted) return;
+    if (!isEffectLogicActive) return;
 
     const currentPhrase = PHRASES[currentPhraseIndex];
     let timeoutId: NodeJS.Timeout;
 
-    if (isDeleting) {
-      if (charIndex > 0) {
-        timeoutId = setTimeout(() => {
-          setDisplayText(currentPhrase.substring(0, charIndex - 1));
-          setCharIndex(prev => prev - 1);
-        }, DELETING_SPEED_MS);
-      } else { // Finished deleting
-        timeoutId = setTimeout(() => {
-          setIsDeleting(false);
-          setCurrentPhraseIndex(prev => (prev + 1) % PHRASES.length);
-          // charIndex is already 0, will be picked up by typing logic
-        }, INTER_PHRASE_PAUSE_MS);
-      }
-    } else { // Typing
+    if (!isDeleting) {
       if (charIndex < currentPhrase.length) {
         timeoutId = setTimeout(() => {
           setDisplayText(currentPhrase.substring(0, charIndex + 1));
           setCharIndex(prev => prev + 1);
         }, TYPING_SPEED_MS);
-      } else { // Finished typing current phrase
+      } else {
         timeoutId = setTimeout(() => {
           setIsDeleting(true);
         }, PHRASE_PAUSE_MS);
       }
+    } else {
+      if (charIndex > 0) {
+        timeoutId = setTimeout(() => {
+          setDisplayText(currentPhrase.substring(0, charIndex - 1));
+          setCharIndex(prev => prev - 1);
+        }, DELETING_SPEED_MS);
+      } else {
+        timeoutId = setTimeout(() => {
+          setCurrentPhraseIndex(prev => (prev + 1) % PHRASES.length);
+          setIsDeleting(false);
+        }, INTER_PHRASE_PAUSE_MS);
+      }
     }
-    timeoutsRef.current.push(timeoutId);
 
+    timeoutsRef.current.push(timeoutId);
     return () => clearAllTimeouts();
   }, [charIndex, isDeleting, currentPhraseIndex, isMounted, isEffectLogicActive]);
 
-  // Cursor blinking effect
   useEffect(() => {
     if (!isMounted) return;
     const cursorInterval = setInterval(() => {
       setShowCursor(prev => !prev);
-    }, 500); // Cursor blink rate
+    }, 500);
     return () => clearInterval(cursorInterval);
   }, [isMounted]);
 
