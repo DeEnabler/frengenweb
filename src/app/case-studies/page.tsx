@@ -1,91 +1,75 @@
-
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
 import { Section } from '@/components/ui/section';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
-import { CheckCircle, ChevronRight, Quote, MessageSquare, Bot, ShieldCheck, Gamepad2 } from 'lucide-react';
+import { CheckCircle, ChevronRight, Quote, Globe, Zap, ShieldCheck, BarChart, Palette } from 'lucide-react';
 import Image from 'next/image';
 
 const caseStudies = [
   {
     id: 1,
-    title: "Streamlining Global Communication for Myosin.xyz with AI Chatbots",
-    client: "Myosin.xyz",
-    problem: "Managing efficient communication and knowledge sharing for over 150 remote employees distributed globally, often facing challenges with time zone differences and team member availability.",
-    solution: "Designed and deployed an intelligent chatbot integrated with Slack. The chatbot utilizes Retrieval-Augmented Generation (RAG) to enable employees to interact with AI-powered representations of their colleagues, allowing them to \"catch up\" on data and project updates asynchronously.",
+    title: "From No Website to Fully Booked in 14 Days",
+    client: "Riverside Family Dental",
+    problem: "A growing dental practice with no online presence was losing patients to competitors with professional websites. They needed a site fast but couldn't afford a $10,000 agency.",
+    solution: "Missile OS built a beautiful, mobile-friendly website with online appointment booking, patient testimonials, and SEO-optimized service pages — all powered by AI agents and launched in under two weeks.",
     results: [
-      "Significantly streamlined communication for 150+ employees across diverse time zones.",
-      "Enhanced asynchronous knowledge sharing and information retrieval.",
-      "Reduced project delays by enabling access to crucial information even when team members are unavailable.",
-      "Improved overall team productivity and collaboration within the familiar Slack environment.",
+      "Launched a professional, conversion-focused website in 14 days",
+      "Online appointment bookings increased by 40% within the first month",
+      "Ranked on page 1 of Google for 'family dentist near me' within 90 days",
+      "Reduced website costs by 70% compared to traditional agency quotes",
     ],
-    icon: MessageSquare,
-    imageHint: "communication team"
+    icon: Globe,
+    imageHint: "dental practice website",
   },
   {
     id: 2,
-    title: "Personalized AI Character System for Dynamic User Engagement",
-    client: "Leading Interactive Entertainment Platform",
-    problem: "The need for highly distinct, engaging AI-driven characters with unique personalities and conversational styles that can be generated and scaled efficiently.",
-    solution: "Developed a robust system leveraging LLM frameworks (Langchain, RAG) to dynamically generate unique AI characters with distinct background stories and conversational styles. Combined prompt engineering and conversational AI design for contextually rich, authentic interactions, supported by a scalable backend for real-time narrative profile generation.",
+    title: "Rebranding a Local Restaurant with AI-Powered Web Design",
+    client: "Bella Trattoria (Italian Restaurant)",
+    problem: "An established restaurant with an outdated, non-mobile-friendly website was losing takeout orders. The owner needed a modern site with an online menu, reservation system, and food delivery integration.",
+    solution: "Our AI agents designed a stunning, mobile-first website with an interactive menu, online reservations, and direct ordering integration. The entire site was built and launched in 10 days at a fraction of traditional agency costs.",
     results: [
-      "Successfully delivered a system capable of generating a wide array of unique AI characters.",
-      "Enhanced user engagement through deeply personalized and adaptive character interactions.",
-      "Provided a scalable and performant backend for real-time generation and delivery of diverse narrative profiles.",
-      "Demonstrated expertise in creating innovative, custom AI solutions for dynamic, user-focused applications.",
+      "Online orders increased by 55% within the first 60 days",
+      "Mobile traffic now accounts for 70% of all site visits",
+      "Average page load time reduced from 6 seconds to 1.2 seconds",
+      "Customer feedback praised the modern, easy-to-use design",
     ],
-    icon: Bot,
-    imageHint: "ai characters"
+    icon: Zap,
+    imageHint: "restaurant website design",
   },
   {
     id: 3,
-    title: "AI Agents for Social Media Safety & Marketing Automation",
-    client: "Social Impact & Brand Tech",
-    problem: "Combating harmful content (specifically antisemitism) on social media while also leveraging these platforms for effective brand marketing automation.",
-    solution: "Developed an innovative AI-driven system using graph databases to map and analyze social media data for real-time detection of antisemitic content. AI agents, integrated across multiple social media platforms, autonomously identified and responded to harmful posts. Simultaneously, the system streamlined marketing automation for several brands by optimizing content distribution and engagement strategies.",
+    title: "Scaling a Consulting Firm's Online Presence with AI",
+    client: "Apex Business Consulting",
+    problem: "A consulting firm had a basic DIY website that didn't reflect their premium services. They needed a professional site that built trust with enterprise clients and generated qualified leads.",
+    solution: "Missile OS delivered a polished, corporate-grade website with case study pages, a blog for thought leadership, and AI-powered contact form optimization. We also implemented ongoing SEO and security monitoring.",
     results: [
-      "Enabled real-time detection and counter-messaging for harmful social media content.",
-      "Improved online community safety through autonomous AI agent intervention.",
-      "Streamlined marketing automation processes for multiple brands.",
-      "Successfully demonstrated a dual-use AI system for social good and marketing efficiency.",
-      "Delivered a scalable solution combining graph analytics, AI agents, and social media integration.",
+      "Qualified lead inquiries increased by 3x within 90 days",
+      "Site ranked on page 1 for 12 industry-specific keywords",
+      "Bounce rate decreased by 35% with improved content and design",
+      "AI-powered security blocked 200+ malicious login attempts per month",
     ],
-    icon: ShieldCheck,
-    imageHint: "social media ai"
-  },
-  {
-    id: 5,
-    title: "Enhancing Player Engagement in Mobile Gaming",
-    client: "PixelPlay Games",
-    problem: "Low player retention and difficulty in monetizing free-to-play game.",
-    solution: "Integrated dynamic AI NPCs with adaptive storylines and personalized in-game offers.",
-    results: [
-      "30% increase in daily active users.",
-      "Player session length extended by 15 minutes on average.",
-      "20% rise in in-app purchase revenue.",
-    ],
-    icon: Gamepad2,
-    imageHint: "gaming success"
+    icon: BarChart,
+    imageHint: "consulting website success",
   },
 ];
 
 const testimonials = [
   {
     id: 1,
-    quote: "FrenGen's solution transformed our customer engagement. Their team was incredibly knowledgeable and supportive throughout the process.",
-    author: "Jane Doe",
-    role: "CMO, RetailGiant Inc.",
+    quote: "Missile OS built our website in a week and a half. We went from having no online presence to getting new patients every day from our site. It was fast, affordable, and the design looks incredible.",
+    author: "Dr. Sarah Martinez",
+    role: "Owner, Riverside Family Dental",
     avatar: "https://placehold.co/100x100.png",
-    avatarHint: "person portrait"
+    avatarHint: "woman professional portrait",
   },
   {
     id: 2,
-    quote: "The AI agents developed by FrenGen have given us a significant competitive edge. We're seeing real ROI.",
-    author: "John Smith",
-    role: "COO, AutoParts Ltd.",
+    quote: "I was quoted $8,000 by an agency and told it would take three months. Missile OS delivered a better website in 10 days at a fraction of the cost. Our online orders jumped immediately.",
+    author: "Marco Rossi",
+    role: "Owner, Bella Trattoria",
     avatar: "https://placehold.co/100x100.png",
-    avatarHint: "person ceo"
+    avatarHint: "man restaurant owner",
   },
 ];
 
@@ -93,10 +77,9 @@ export default function CaseStudiesPage() {
   return (
     <>
       <HeroSection
-        title="Real-World Impact: Our Success Stories"
-        subtitle="Discover how FrenGen has partnered with businesses to deliver tangible results and drive innovation through bespoke AI solutions."
+        title="Real Results for Real Small Businesses"
+        subtitle="See how Missile OS has helped small businesses around the world build professional websites that drive traffic, conversions, and growth — without the agency price tag."
       />
-
       <Section id="case-studies-list">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
           {caseStudies.map((study) => {
@@ -136,7 +119,7 @@ export default function CaseStudiesPage() {
                   </CardContent>
                   <CardFooter>
                     <Button variant="link" className="px-0 text-primary">
-                      Read Full Study (Soon) <ChevronRight className="w-4 h-4 ml-1" />
+                      Read Full Story (Soon) <ChevronRight className="w-4 h-4 ml-1" />
                     </Button>
                   </CardFooter>
                 </div>
@@ -145,7 +128,6 @@ export default function CaseStudiesPage() {
           })}
         </div>
       </Section>
-
       <Section id="testimonials" className="bg-muted/50">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">What Our Clients Say</h2>
@@ -175,15 +157,14 @@ export default function CaseStudiesPage() {
           ))}
         </div>
       </Section>
-
       <Section id="cta-case-studies" className="text-center">
-        <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Write Your Success Story?</h2>
+        <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Be Our Next Success Story?</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-          Partner with FrenGen and let's build an innovative solution that drives remarkable results for your business.
+          Let's build a professional website that drives real results for your small business. Start with a free strategy call.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">
-            <Link href="/contact">Become a Success Story</Link>
+            <Link href="/contact">Get Your Free Strategy Call</Link>
           </Button>
         </div>
       </Section>

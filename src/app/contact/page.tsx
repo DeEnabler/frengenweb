@@ -1,6 +1,4 @@
-
 "use client";
-
 import { HeroSection } from '@/components/ui/hero-section';
 import { Section } from '@/components/ui/section';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -32,7 +30,7 @@ function ContactFormContent() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [displayedInterest, setDisplayedInterest] = useState("General Inquiry");
+  const [displayedInterest, setDisplayedInterest] = useState("New Website Project");
 
   const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -40,43 +38,40 @@ function ContactFormContent() {
       name: "",
       email: "",
       company: "",
-      interest: "General Inquiry",
+      interest: "New Website Project",
       message: "",
-    }
+    },
   });
 
   useEffect(() => {
     setIsMounted(true);
     const subject = searchParams.get('subject');
-    let prefilledInterest = "General Inquiry";
-
-    if (subject) {
-      const interests = ["AI Agents", "Intelligent Chatbots", "AI Game Characters", "Consultancy", "Careers", "General Inquiry"];
-      const matchedInterest = interests.find(interest => subject.toLowerCase().includes(interest.toLowerCase().replace(/\s/g, '')));
-      if (matchedInterest) {
-        prefilledInterest = matchedInterest;
-      }
+    if (subject === 'Blog+Topic+Suggestion') {
+      setDisplayedInterest('General Inquiry');
+      setValue('interest', 'General Inquiry', { shouldValidate: true });
     }
-    
-    setValue('interest', prefilledInterest, { shouldValidate: true });
-    setDisplayedInterest(prefilledInterest);
-
   }, [searchParams, setValue]);
-
 
   const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
     setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    console.log("Form Data:", data);
-    setIsLoading(false);
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll be in touch soon.",
-    });
-    reset();
-    setValue('interest', 'General Inquiry'); 
-    setDisplayedInterest('General Inquiry');
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      console.log("Form submitted:", data);
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 business hours.",
+      });
+      reset();
+      setDisplayedInterest("New Website Project");
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (!isMounted) {
@@ -90,12 +85,11 @@ function ContactFormContent() {
   return (
     <>
       <HeroSection
-        title="Get in Touch with FrenGen"
-        subtitle="We're excited to hear about your AI aspirations. Whether you're looking for a custom solution, consultancy, or just want to learn more, reach out to us."
+        title="Let's Build Your Website"
+        subtitle="Tell us about your small business and what you need. We'll get back to you within 24 hours to schedule your free strategy call."
       />
-
-      <Section id="contact-form-section">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+      <Section>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <Card className="shadow-xl">
             <CardHeader>
               <CardTitle className="font-headline text-2xl">Send Us a Message</CardTitle>
@@ -114,35 +108,31 @@ function ContactFormContent() {
                   {errors.email && <p className="text-sm text-destructive mt-1">{errors.email.message}</p>}
                 </div>
                 <div>
-                  <Label htmlFor="company">Company (Optional)</Label>
-                  <Input id="company" {...register("company")} placeholder="Your Company Name" />
+                  <Label htmlFor="company">Business Name (Optional)</Label>
+                  <Input id="company" {...register("company")} placeholder="Your Business Name" />
                 </div>
                 <div>
-                  <Label htmlFor="interest">Area of Interest</Label>
-                  <Select 
-                    value={displayedInterest}
-                    onValueChange={(value) => {
-                      setValue('interest', value, { shouldValidate: true });
-                      setDisplayedInterest(value);
-                    }}
-                  >
+                  <Label htmlFor="interest">What Do You Need?</Label>
+                  <Select value={displayedInterest} onValueChange={(value) => {
+                    setValue('interest', value, { shouldValidate: true });
+                    setDisplayedInterest(value);
+                  }}>
                     <SelectTrigger id="interest">
-                      <SelectValue placeholder="Select an interest" />
+                      <SelectValue placeholder="Select an option" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="AI Agents">AI Agents</SelectItem>
-                      <SelectItem value="Intelligent Chatbots">Intelligent Chatbots</SelectItem>
-                      <SelectItem value="AI Game Characters">AI Game Characters</SelectItem>
-                      <SelectItem value="Consultancy">Consultancy Services</SelectItem>
-                      <SelectItem value="Careers">Careers</SelectItem>
+                      <SelectItem value="New Website Project">New Website Project</SelectItem>
+                      <SelectItem value="Website Redesign">Website Redesign</SelectItem>
+                      <SelectItem value="Ongoing Maintenance">Ongoing Maintenance</SelectItem>
+                      <SelectItem value="AI Cybersecurity">AI Cybersecurity</SelectItem>
                       <SelectItem value="General Inquiry">General Inquiry</SelectItem>
                     </SelectContent>
                   </Select>
-                   {errors.interest && <p className="text-sm text-destructive mt-1">{errors.interest.message}</p>}
+                  {errors.interest && <p className="text-sm text-destructive mt-1">{errors.interest.message}</p>}
                 </div>
                 <div>
-                  <Label htmlFor="message">Your Message</Label>
-                  <Textarea id="message" {...register("message")} placeholder="Tell us about your project or query..." rows={5} />
+                  <Label htmlFor="message">Tell Us About Your Business</Label>
+                  <Textarea id="message" {...register("message")} placeholder="What does your business do? What kind of website do you need?" rows={5} />
                   {errors.message && <p className="text-sm text-destructive mt-1">{errors.message.message}</p>}
                 </div>
                 <Button type="submit" className="w-full" disabled={isLoading}>
@@ -152,7 +142,6 @@ function ContactFormContent() {
               </form>
             </CardContent>
           </Card>
-
           <div className="space-y-8">
             <Card className="shadow-lg">
               <CardHeader>
@@ -161,19 +150,28 @@ function ContactFormContent() {
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="w-6 h-6 text-primary" />
-                  <a href="mailto:info@frengen.ai" className="text-md hover:text-primary">info@frengen.ai</a>
+                  <a href="mailto:info@missileos.ai" className="text-md hover:text-primary">info@missileos.ai</a>
                 </div>
               </CardContent>
             </Card>
-            
             <Card className="shadow-lg">
-                <CardHeader>
-                    <CardTitle className="font-headline">Business Hours</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-md">Monday - Friday: 9:00 AM - 6:00 PM (PST)</p>
-                    <p className="text-sm text-muted-foreground">We strive to respond to all inquiries within 24 business hours.</p>
-                </CardContent>
+              <CardHeader>
+                <CardTitle className="font-headline">Why Reach Out?</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-muted-foreground">
+                  ✓ Free strategy call — no pressure, no commitment required
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  ✓ We'll review your current online presence and suggest improvements
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  ✓ Get a clear timeline and upfront pricing for your project
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  ✓ We respond to all inquiries within 24 business hours
+                </p>
+              </CardContent>
             </Card>
           </div>
         </div>

@@ -1,64 +1,58 @@
 import { HeroSection } from '@/components/ui/hero-section';
 import { Section } from '@/components/ui/section';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Layers, DatabaseZap, Puzzle, Brain, MessageSquare, Share2, Code2, Settings2, Lightbulb } from 'lucide-react';
+import { Palette, Search, Zap, ShieldCheck, Code2, Smartphone, Layers, BarChart, Globe, Rocket } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 const expertiseAreas = [
   {
+    icon: <Palette className="w-10 h-10" />,
+    title: "AI-Powered Web Design",
+    description: "Our AI agents generate beautiful, custom website designs tailored to your brand and industry — no templates, no cookie-cutter layouts.",
+    tags: ["Custom Design", "Brand-Matched", "No Templates"],
+  },
+  {
+    icon: <Search className="w-10 h-10" />,
+    title: "SEO-Optimized Development",
+    description: "Every website is built with search engine optimization built in, so your small business gets found by customers searching for your services.",
+    tags: ["On-Page SEO", "Technical SEO", "Local Search"],
+  },
+  {
+    icon: <Smartphone className="w-10 h-10" />,
+    title: "Mobile-First Development",
+    description: "Your website is designed and tested for every device — phones, tablets, and desktops — with lightning-fast load times.",
+    tags: ["Responsive", "Fast Loading", "Mobile UX"],
+  },
+  {
+    icon: <BarChart className="w-10 h-10" />,
+    title: "Conversion-Focused Architecture",
+    description: "Every page is structured to turn visitors into customers, with clear calls-to-action, trust signals, and optimized user journeys.",
+    tags: ["CRO", "Lead Generation", "User Journeys"],
+  },
+  {
+    icon: <Zap className="w-10 h-10" />,
+    title: "AI Agent Automation",
+    description: "Our intelligent AI agents handle design, copywriting, layout generation, and ongoing optimization — delivering professional results fast.",
+    tags: ["LLM Agents", "Automated Design", "AI Copywriting"],
+  },
+  {
+    icon: <ShieldCheck className="w-10 h-10" />,
+    title: "AI-Powered Cybersecurity",
+    description: "We protect every website we build with AI-driven security monitoring that detects threats, blocks attacks, and keeps your site safe 24/7.",
+    tags: ["Threat Detection", "Malware Protection", "24/7 Monitoring"],
+  },
+  {
     icon: <Layers className="w-10 h-10" />,
-    title: "LLM Application Development",
-    description: "We build sophisticated user-facing applications leveraging the power of Large Language Models, creating intuitive and intelligent experiences.",
-    tags: ["GenAI", "NLP", "User Experience"]
+    title: "Ongoing Maintenance & Updates",
+    description: "Your website stays fresh, secure, and up-to-date with continuous AI-powered monitoring, performance optimization, and content updates.",
+    tags: ["Continuous Updates", "Performance", "Content Refresh"],
   },
   {
-    icon: <DatabaseZap className="w-10 h-10" />,
-    title: "Robust Backend Infrastructure",
-    description: "Our team designs and develops scalable, secure, and high-performance backend systems for SaaS products and complex AI deployments.",
-    tags: ["SaaS", "Scalability", "Microservices", "Cloud"]
-  },
-  {
-    icon: <Puzzle className="w-10 h-10" />,
-    title: "End-to-End Prototypes & Applications",
-    description: "From ideation to deployment, we rapidly prototype and build complete LLM-powered applications, demonstrating value quickly.",
-    tags: ["Prototyping", "Full-Stack", "MVP Development"]
-  },
-  {
-    icon: <Brain className="w-10 h-10" />,
-    title: "Advanced LLM Frameworks",
-    description: "Proficiency in Langchain and Retrieval-Augmented Generation (RAG) solutions allows us to deliver scalable and data-driven AI systems.",
-    tags: ["Langchain", "RAG", "Vector Databases", "Data Pipelines"]
-  },
-  {
-    icon: <Lightbulb className="w-10 h-10" />,
-    title: "Strategic Prompt Engineering",
-    description: "We optimize AI interactions through meticulous prompt engineering, ensuring accurate, relevant, and context-aware responses from LLMs.",
-    tags: ["Prompt Design", "AI Optimization", "Interaction Tuning"]
-  },
-  {
-    icon: <MessageSquare className="w-10 h-10" />,
-    title: "Conversational AI Design",
-    description: "Crafting intuitive, engaging, and effective conversational experiences for chatbots and AI agents is at the core of our design philosophy.",
-    tags: ["UX for AI", "Dialogue Flow", "NLU/NLG"]
-  },
-  {
-    icon: <Share2 className="w-10 h-10" />,
-    title: "Graph-Based Applications",
-    description: "Leveraging graph databases and methodologies to model complex relationships, enabling sophisticated data insights and AI capabilities.",
-    tags: ["Graph Databases", "Knowledge Graphs", "Network Analysis"]
-  },
-  {
-    icon: <Code2 className="w-10 h-10" />,
-    title: "Custom Algorithm Development",
-    description: "Beyond off-the-shelf solutions, we develop custom algorithms tailored to unique business problems and data characteristics.",
-    tags: ["Machine Learning", "Optimization", "Custom AI Models"]
-  },
-  {
-    icon: <Settings2 className="w-10 h-10" />,
-    title: "Conversation Design for Seamless Interactions",
-    description: "Our hands-on experience in conversation design focuses on crafting seamless, context-aware AI interactions that feel natural and human-like.",
-    tags: ["Contextual AI", "Human-AI Interaction", "Personalization"]
+    icon: <Globe className="w-10 h-10" />,
+    title: "Global Small Business Focus",
+    description: "We build websites for small businesses worldwide, understanding the unique needs and budgets of SMBs across different industries and regions.",
+    tags: ["SMB Expertise", "Global Reach", "Affordable Pricing"],
   },
 ];
 
@@ -66,10 +60,9 @@ export default function ExpertisePage() {
   return (
     <>
       <HeroSection
-        title="Our Technical Prowess in AI Innovation"
-        subtitle="FrenGen combines deep technical expertise with a passion for research to deliver cutting-edge AI solutions. Explore our capabilities across the AI development lifecycle."
+        title="How We Build Professional Websites with AI"
+        subtitle="Missile OS combines cutting-edge AI technology with expert human oversight to deliver websites that look great, load fast, and convert visitors into customers — all at a price small businesses can afford."
       />
-
       <Section id="expertise-grid">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {expertiseAreas.map((area) => (
@@ -92,24 +85,22 @@ export default function ExpertisePage() {
           ))}
         </div>
       </Section>
-      
       <Section id="philosophy" className="bg-card">
         <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Our Approach to AI Development</h2>
-            <p className="mt-6 text-lg text-foreground/80">
-                At FrenGen, we believe in a client-centric and research-driven approach. We start by understanding your unique challenges and goals. Then, leveraging our deep technical knowledge and the latest advancements in AI, we architect and build solutions that are not only technologically advanced but also practical, scalable, and impactful. Our commitment is to transform your vision into reality with AI that works for you.
-            </p>
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Our Approach to Website Building</h2>
+          <p className="mt-6 text-lg text-foreground/80">
+            At Missile OS, we believe that every small business deserves a professional website that actually works. We start by understanding your business, your customers, and your goals. Then our AI agents handle the heavy lifting — design, copywriting, development, and optimization — while our expert team ensures quality at every step. The result is a website that looks premium, loads fast, ranks well, and converts visitors into customers. All delivered in days, not months, at a price that fits your budget.
+          </p>
         </div>
       </Section>
-
       <Section id="cta-expertise" className="text-center">
-        <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Leverage Our Expertise for Your AI Vision</h2>
+        <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Build Your Website?</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-          Ready to discuss how our technical skills can bring your AI project to life? Reach out to our team of experts.
+          Let's discuss how our AI-powered approach can deliver a professional website for your small business — fast and affordable.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">
-            <Link href="/contact">Consult Our Experts</Link>
+            <Link href="/contact">Get Your Free Strategy Call</Link>
           </Button>
         </div>
       </Section>

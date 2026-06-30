@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
@@ -18,39 +17,42 @@ interface TeamMember {
   linkedin?: string;
 }
 
-// Ensure images are placed in public/images/team/
-// and that filenames (including extensions and casing) match exactly.
-// For example: '/images/team/nadav-rubinstein.jpg'
 const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: "Nadav Rubinstein",
-    role: "Co-founder",
-    bio: "Nadav, a Machine Learning Researcher, leverages his experience from IBM and Rafael Advanced Defense Systems in advanced ML and deep learning. His research acumen is key to developing FrenGen's cutting-edge AI agents and custom solutions.",
-    expertise: ["Machine Learning", "Deep Learning", "AI Research", "Custom AI", "AI Agents"],
+    role: "Co-founder & ML Research Lead",
+    bio: "Machine learning researcher with experience from IBM and Rafael Advanced Defense Systems. Leads the AI research behind our website generation engine, ensuring every site is built with intelligent, data-driven design decisions.",
+    expertise: ["Machine Learning", "AI Research", "Website AI", "AI Agents"],
     image: "/images/team/nadav-rubinstein.jpg",
     imageHint: "man professional portrait",
-    // linkedin: "https://www.linkedin.com/in/nadavrubinstein",
   },
   {
     id: 2,
     name: "Shlomi Gibly",
-    role: "Co-founder",
-    bio: "Shlomi brings a unique fusion of data expertise and blockchain security to FrenGen. His experience includes collaborating with StarkWare and the Ethereum Foundation on security protocols, and pioneering generative smart contracts with Flashbots. This deep Web3 knowledge, combined with his skill in transforming complex data into strategic assets, is integral to developing FrenGen's secure and sophisticated AI-powered applications.",
-    expertise: ["Data Analysis", "Python", "Blockchain Security", "Smart Contracts", "Chatbots", "Game AI"],
+    role: "Co-founder & AI Operations Lead",
+    bio: "Builds the AI agent systems that power Missile OS website creation and maintenance. Experienced in deploying practical AI that replaces manual workflows and delivers real results for small businesses worldwide.",
+    expertise: ["AI Agents", "Website Automation", "Operations", "Web Systems"],
     image: "/images/team/shlomi-gibly.jpg",
     imageHint: "man smiling professional",
-    // linkedin: "https://www.linkedin.com/in/shlomigibly",
   },
   {
     id: 3,
     name: "Ofir Bar Tal",
-    role: "Co-founder",
-    bio: "Ofir combines academic research with practical AI application, drawing from his experience as a Data Scientist at Google (Waze). His expertise in ML and problem-solving drives FrenGen's bespoke LLM applications and custom AI solutions.",
-    expertise: ["Machine Learning", "Data Science", "LLM Applications", "Bespoke AI", "Problem Solving"],
-    image: "/images/team/ofir-bar-tal.jpg", // Please ensure this file exists at public/images/team/ofir-bar-tal.jpg (case-sensitive)
+    role: "Co-founder & AI Engineering Lead",
+    bio: "Former data scientist at Google (Waze). Turns complex ML research into working products. Leads the engineering of our AI-powered website builder and the LLM applications that generate designs, copy, and layouts automatically.",
+    expertise: ["LLM Applications", "Data Science", "AI Engineering", "Product Engineering"],
+    image: "/images/team/ofir-bar-tal.jpg",
     imageHint: "man tech professional",
-    // linkedin: "https://www.linkedin.com/in/ofirbartal",
+  },
+  {
+    id: 4,
+    name: "Omri Ben Ami",
+    role: "Head of Customer Success & Web Strategy",
+    bio: "Ensures every website we build drives real results for small business owners. Leads client onboarding, conversion strategy, and ongoing website optimization so your site keeps working for you long after launch.",
+    expertise: ["Web Strategy", "Client Success", "Conversion Optimization", "SEO"],
+    image: "/images/team/omri-ben-ami.jpg",
+    imageHint: "man professional portrait",
   },
 ];
 
@@ -58,20 +60,18 @@ export default function TeamPage() {
   return (
     <>
       <HeroSection
-        title="Meet the Minds Behind FrenGen"
-        subtitle="Our global team is a powerhouse of diverse expertise, blending seasoned ex-big tech engineers, ambitious student developers, and leading machine learning PhDs, all dedicated to delivering cutting-edge AI solutions."
+        title="Meet the Minds Behind Missile OS"
+        subtitle="A focused team of AI engineers, web strategists, and cybersecurity experts dedicated to building professional websites for small businesses around the world."
       />
-
       <Section id="team-intro">
         <div className="text-center max-w-3xl mx-auto">
           <Users className="w-16 h-16 text-primary mx-auto mb-6" />
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">A Synergy of Experience and Innovation</h2>
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Building Better Websites Through AI</h2>
           <p className="mt-6 text-lg text-foreground/80">
-            At FrenGen, we believe that the best solutions arise from collaboration and diverse perspectives. Our team members bring a wealth of knowledge from academia and industry, working together to tackle complex AI challenges and build impactful products. We foster a culture of continuous learning and innovation, ensuring we stay at the forefront of AI development.
+            At Missile OS, we combine deep expertise in artificial intelligence with a passion for helping small businesses succeed online. Our team brings together experience from Google, IBM, and Rafael to build AI agents that create professional websites faster and more affordably than traditional agencies. We believe every small business deserves a website that looks premium and actually converts visitors into customers.
           </p>
         </div>
       </Section>
-
       <Section id="team-grid" className="bg-muted/50">
         {teamMembers.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
@@ -81,10 +81,10 @@ export default function TeamPage() {
                   <Image
                     src={member.image}
                     alt={member.name}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: 'cover' }}
                     data-ai-hint={member.imageHint}
-                    unoptimized={process.env.NODE_ENV === 'development'} 
+                    unoptimized={process.env.NODE_ENV === 'development'}
                   />
                 </div>
                 <div className="flex flex-col flex-grow text-center sm:text-left">
@@ -102,7 +102,7 @@ export default function TeamPage() {
                     </div>
                   </div>
                   {member.linkedin && (
-                     <Button variant="outline" size="sm" asChild className="mt-auto self-center sm:self-start">
+                    <Button variant="outline" size="sm" asChild className="mt-auto self-center sm:self-start">
                       <Link href={member.linkedin} target="_blank" rel="noopener noreferrer">
                         <Linkedin className="w-4 h-4 mr-2" /> LinkedIn Profile
                       </Link>
@@ -115,19 +115,17 @@ export default function TeamPage() {
         ) : (
           <div className="text-center py-12">
             <p className="text-lg text-muted-foreground">Our team information is being updated. Please check back soon!</p>
-            <p className="text-sm text-muted-foreground mt-2">To add team members, please edit the <code>teamMembers</code> array in <code>src/app/team/page.tsx</code> and place images in <code>public/images/team/</code>. Ensure filenames match exactly (case-sensitive).</p>
           </div>
         )}
       </Section>
-
       <Section id="join-us" className="bg-card text-center">
-        <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Interested in Joining Our Team?</h2>
+        <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Ready to Work with Us?</h2>
         <p className="mt-6 text-lg text-foreground/80 max-w-xl mx-auto">
-          We're always looking for passionate and talented individuals to join our mission of AI innovation. If you're excited by the prospect of working on challenging projects with a world-class team, we'd love to hear from you.
+          Let's talk about your business and how we can build a professional website that drives results. Book your free strategy call today.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">
-            <Link href="/contact#careers">View Open Positions</Link>
+            <Link href="/contact">Get Your Free Strategy Call</Link>
           </Button>
         </div>
       </Section>

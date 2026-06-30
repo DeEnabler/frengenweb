@@ -3,9 +3,10 @@ import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 const PHRASES = [
-  "AI Agents for Small Businesses",
-  "Fast, Beautiful Websites for SMBs",
-  "Real AI That Actually Saves Money"
+  "Beautiful Websites for Small Business",
+  "AI-Powered Website Building",
+  "Professional Sites in Days, Not Months",
+  "Affordable Web Design with AI Agents",
 ];
 
 const TYPING_SPEED_MS = 120;
@@ -13,8 +14,7 @@ const DELETING_SPEED_MS = 70;
 const PHRASE_PAUSE_MS = 1500;
 const INTER_PHRASE_PAUSE_MS = 750;
 const INITIAL_CLIENT_DELAY_MS = 100;
-
-const FALLBACK_TEXT = "FrenGen: Practical AI for Small & Medium Businesses";
+const FALLBACK_TEXT = "Missile OS: AI Website Builder for Small Business";
 
 interface TypewriterEffectProps {
   className?: string;
@@ -54,48 +54,51 @@ export function TypewriterEffect({ className, cursorClassName }: TypewriterEffec
     if (!isEffectLogicActive && !isMounted) return;
     if (!isEffectLogicActive) return;
 
-    const currentPhrase = PHRASES[currentPhraseIndex];
-    let timeoutId: NodeJS.Timeout;
-
-    if (!isDeleting) {
-      if (charIndex < currentPhrase.length) {
-        timeoutId = setTimeout(() => {
-          setDisplayText(currentPhrase.substring(0, charIndex + 1));
-          setCharIndex(prev => prev + 1);
-        }, TYPING_SPEED_MS);
-      } else {
-        timeoutId = setTimeout(() => {
-          setIsDeleting(true);
-        }, PHRASE_PAUSE_MS);
-      }
-    } else {
-      if (charIndex > 0) {
-        timeoutId = setTimeout(() => {
-          setDisplayText(currentPhrase.substring(0, charIndex - 1));
-          setCharIndex(prev => prev - 1);
-        }, DELETING_SPEED_MS);
-      } else {
-        timeoutId = setTimeout(() => {
-          setCurrentPhraseIndex(prev => (prev + 1) % PHRASES.length);
-          setIsDeleting(false);
-        }, INTER_PHRASE_PAUSE_MS);
-      }
+    if (!isDeleting && charIndex < PHRASES[currentPhraseIndex].length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(PHRASES[currentPhraseIndex].substring(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+      }, TYPING_SPEED_MS);
+      timeoutsRef.current.push(timeout);
+    } else if (!isDeleting && charIndex === PHRASES[currentPhraseIndex].length) {
+      const timeout = setTimeout(() => {
+        setIsDeleting(true);
+      }, PHRASE_PAUSE_MS);
+      timeoutsRef.current.push(timeout);
+    } else if (isDeleting && charIndex > 0) {
+      const timeout = setTimeout(() => {
+        setDisplayText(PHRASES[currentPhraseIndex].substring(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+      }, DELETING_SPEED_MS);
+      timeoutsRef.current.push(timeout);
+    } else if (isDeleting && charIndex === 0) {
+      const timeout = setTimeout(() => {
+        setIsDeleting(false);
+        setCurrentPhraseIndex((prev) => (prev + 1) % PHRASES.length);
+      }, INTER_PHRASE_PAUSE_MS);
+      timeoutsRef.current.push(timeout);
     }
 
-    timeoutsRef.current.push(timeoutId);
     return () => clearAllTimeouts();
-  }, [charIndex, isDeleting, currentPhraseIndex, isMounted, isEffectLogicActive]);
+  }, [charIndex, isDeleting, currentPhraseIndex, isEffectLogicActive, isMounted]);
 
   useEffect(() => {
-    if (!isMounted) return;
-    const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev);
-    }, 500);
-    return () => clearInterval(cursorInterval);
-  }, [isMounted]);
+    const interval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 530);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <span className={cn("font-headline", className)}>
+        {FALLBACK_TEXT}
+      </span>
+    );
+  }
 
   return (
-    <span className={cn("inline-block", className)} aria-live="polite" aria-atomic="true">
+    <span className={cn("font-headline", className)}>
       {displayText}
       {isMounted && showCursor && (
         <span className={cn("typing-cursor", "text-muted-foreground", cursorClassName)} aria-hidden="true">

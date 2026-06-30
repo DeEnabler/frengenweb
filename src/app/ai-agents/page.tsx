@@ -1,100 +1,103 @@
-
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
 import { Section } from '@/components/ui/section';
 import { FeatureCard } from '@/components/ui/feature-card';
-import { Bot, Zap, BarChart, MessageSquare, ChevronRight } from 'lucide-react';
-import Image from 'next/image';
-import { ServiceRecommendationDemo } from '@/components/genai/service-recommendation-demo';
+import { Bot, Zap, Palette, Search, BarChart, ShieldCheck, ChevronRight, Rocket, Sparkles, Code2, Globe } from 'lucide-react';
 
-const useCases = [
+const capabilities = [
   {
-    icon: <MessageSquare className="w-8 h-8" />,
-    title: "Automated Customer Support",
-    description: "AI agents handle customer inquiries 24/7, resolving issues faster and improving satisfaction.",
-  },
-  {
-    icon: <BarChart className="w-8 h-8" />,
-    title: "Data Entry & Processing",
-    description: "Streamline data management with AI agents that accurately enter, validate, and process information.",
+    icon: <Palette className="w-8 h-8" />,
+    title: "AI-Powered Design Generation",
+    description: "Our AI agents analyze your brand and industry to generate custom, professional website designs — no templates, no cookie-cutter layouts.",
   },
   {
     icon: <Zap className="w-8 h-8" />,
-    title: "Workflow Optimization",
-    description: "Identify bottlenecks and automate repetitive tasks within your existing workflows for peak efficiency.",
+    title: "Automated Copywriting",
+    description: "AI agents write compelling, conversion-focused copy for every page, tailored to your industry and target audience.",
   },
   {
-    icon: <Bot className="w-8 h-8" />,
-    title: "Personalized Recommendations",
-    description: "Deliver tailored product or content suggestions to users, driven by intelligent AI analysis.",
+    icon: <Search className="w-8 h-8" />,
+    title: "Intelligent SEO Optimization",
+    description: "Built-in SEO ensures your website ranks well on Google and other search engines, driving organic traffic to your business.",
   },
-];
-
-const benefits = [
-  "Increased Efficiency & Productivity",
-  "Reduced Operational Costs",
-  "Improved Accuracy & Data Quality",
-  "Enhanced Customer Experience",
-  "Scalability to Meet Demand",
-  "Focus Human Talent on Strategic Tasks",
+  {
+    icon: <BarChart className="w-8 h-8" />,
+    title: "Conversion Optimization",
+    description: "Every page is structured with clear calls-to-action and user journeys designed to turn visitors into paying customers.",
+  },
+  {
+    icon: <ShieldCheck className="w-8 h-8" />,
+    title: "AI-Powered Security Monitoring",
+    description: "Intelligent security agents monitor your website 24/7, detecting threats and blocking attacks before they cause damage.",
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "Global Small Business Focus",
+    description: "We build websites for small businesses worldwide, with AI agents that understand local markets and industry needs.",
+  },
 ];
 
 export default function AiAgentsPage() {
   return (
     <>
       <HeroSection
-        title="AI Agents: Automate Complexity, Amplify Efficiency"
-        subtitle="Discover how FrenGen's intelligent agents can revolutionize your business operations, streamline workflows, and unlock new levels of productivity."
+        title="AI Agents That Build Professional Websites"
+        subtitle="Missile OS uses intelligent AI agents to design, build, and maintain high-converting websites for small businesses — fast, affordable, and without technical skills."
       >
         <Button asChild size="lg">
-          <Link href="/contact?subject=AI+Agent+Demo">Request an AI Agent Demo</Link>
+          <Link href="/contact">Build Your Website Today</Link>
         </Button>
       </HeroSection>
 
       <Section id="what-are-ai-agents" className="bg-card">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex items-center justify-center h-80 md:h-96 rounded-lg shadow-xl bg-card">
-             <Bot className="w-40 h-40 text-primary" />
+            <Bot className="w-40 h-40 text-primary" />
           </div>
           <div>
-            <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">What Are AI Agents?</h2>
+            <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">What Are AI Website Agents?</h2>
             <p className="mt-6 text-lg text-foreground/80">
-              AI agents are sophisticated software entities designed to perform tasks autonomously on behalf of users or other programs. They perceive their environment, make decisions, and take actions to achieve specific goals. At FrenGen, we build custom agents that integrate seamlessly into your existing systems, tackling complex processes with precision and intelligence.
+              AI website agents are intelligent software systems that autonomously handle the work of building a professional website — from design and copywriting to SEO optimization and security monitoring. At Missile OS, our AI agents work alongside our expert team to deliver websites that look great and actually convert visitors into customers.
             </p>
             <p className="mt-4 text-lg text-foreground/80">
-              From automating routine administrative work to handling intricate data analysis and customer interactions, our AI agents are engineered to learn, adapt, and deliver consistent results.
+              Instead of paying an agency thousands of dollars and waiting months, our AI agents handle the heavy lifting in days — at a price small businesses can actually afford.
             </p>
           </div>
         </div>
       </Section>
 
-      <Section id="use-cases">
+      <Section id="capabilities">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Versatile Applications Across Industries</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Our AI agents can be tailored to a wide array of business needs.
-          </p>
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">What Our AI Agents Do</h2>
+          <p className="mt-4 text-lg text-muted-foreground">From design to security, our AI handles every aspect of website creation and maintenance.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-          {useCases.map((useCase) => (
+          {capabilities.map((cap) => (
             <FeatureCard
-              key={useCase.title}
-              icon={<div className="text-primary p-2 bg-primary/10 rounded-md">{useCase.icon}</div>}
-              title={useCase.title}
-              description={useCase.description}
+              key={cap.title}
+              icon={<div className="text-primary p-2 bg-primary/10 rounded-md">{cap.icon}</div>}
+              title={cap.title}
+              description={cap.description}
               className="text-left"
             />
           ))}
         </div>
       </Section>
-      
+
       <Section id="benefits" className="bg-muted/50">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Key Benefits of FrenGen AI Agents</h2>
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">The Benefits of AI-Powered Website Building</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.map((benefit) => (
+          {[
+            "Websites built in days, not months",
+            "70% lower cost than traditional agencies",
+            "Professional, custom design — no templates",
+            "Built-in SEO and conversion optimization",
+            "Ongoing AI-powered maintenance and updates",
+            "AI cybersecurity protection included",
+          ].map((benefit) => (
             <div key={benefit} className="flex items-start space-x-3 p-4 bg-card rounded-lg shadow">
               <ChevronRight className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <p className="text-md">{benefit}</p>
@@ -103,26 +106,14 @@ export default function AiAgentsPage() {
         </div>
       </Section>
 
-      <Section id="ai-demo" className="bg-card">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Get a Personalized Recommendation</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Describe your business challenge, and our AI will suggest how FrenGen's services can help address your specific needs.
-          </p>
-        </div>
-        <div className="max-w-3xl mx-auto">
-          <ServiceRecommendationDemo />
-        </div>
-      </Section>
-
       <Section id="cta" className="text-center">
-        <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Empower Your Business with AI Agents?</h2>
+        <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Let AI Build Your Website?</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-          Let's discuss your specific automation challenges and how FrenGen can design the perfect agent solution for you.
+          Get a professional, AI-powered website for your small business — fast and affordable. Start with a free strategy call.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">
-            <Link href="/contact?subject=AI+Agent+Inquiry">Contact Us Today</Link>
+            <Link href="/contact">Get Your Free Strategy Call</Link>
           </Button>
         </div>
       </Section>

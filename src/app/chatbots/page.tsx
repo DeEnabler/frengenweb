@@ -1,33 +1,30 @@
-
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-section';
 import { Section } from '@/components/ui/section';
 import { FeatureCard } from '@/components/ui/feature-card';
-import { MessageCircle, DatabaseZap, Search, ShieldCheck, BrainCircuit } from 'lucide-react';
-import Image from 'next/image';
-import { ChatbotInteractionDemo } from '@/components/genai/chatbot-interaction-demo';
+import { MessageCircle, Search, ShieldCheck, Zap, Globe, Smartphone, ChevronRight } from 'lucide-react';
 
 const features = [
   {
     icon: <Search className="w-8 h-8" />,
-    title: "Natural Language Queries",
-    description: "Employees can ask questions in plain language, just like talking to a colleague.",
+    title: "AI-Powered Website Chatbots",
+    description: "Intelligent chatbots that engage visitors on your website, answer common questions, and capture leads 24/7 — even when you're not available.",
   },
   {
-    icon: <DatabaseZap className="w-8 h-8" />,
-    title: "Seamless Data Integration",
-    description: "Connects to various company data sources to provide comprehensive answers.",
+    icon: <Zap className="w-8 h-8" />,
+    title: "Instant Customer Support",
+    description: "Your website visitors get instant answers about your services, pricing, and availability, improving customer satisfaction and reducing response times.",
   },
   {
     icon: <ShieldCheck className="w-8 h-8" />,
     title: "Secure & Context-Aware",
-    description: "Maintains data security and understands context for relevant, accurate responses.",
+    description: "Our chatbots are trained on your business information and maintain data security while providing relevant, accurate responses to your customers.",
   },
   {
     icon: <MessageCircle className="w-8 h-8" />,
-    title: "Personalized Insights",
-    description: "Delivers insights tailored to employee roles and access permissions.",
+    title: "Lead Capture & Qualification",
+    description: "Chatbots automatically qualify leads, collect contact information, and route serious inquiries directly to you — so you never miss an opportunity.",
   },
 ];
 
@@ -35,26 +32,26 @@ export default function ChatbotsPage() {
   return (
     <>
       <HeroSection
-        title="Intelligent Chatbots: Unlock Your Company's Data Potential"
-        subtitle="Empower your employees with FrenGen's intelligent chatbots, enabling seamless exploration and interaction with company data through intuitive conversational interfaces."
+        title="AI Chatbots for Your Small Business Website"
+        subtitle="Engage visitors, capture leads, and provide instant support 24/7 with AI-powered chatbots built into your website by Missile OS."
       >
         <Button asChild size="lg">
-          <Link href="/contact?subject=Chatbot+Demo">Request a Chatbot Demo</Link>
+          <Link href="/contact">Add a Chatbot to Your Website</Link>
         </Button>
       </HeroSection>
 
       <Section id="why-chatbots" className="bg-card">
-         <div className="grid md:grid-cols-2 gap-12 items-center">
-           <div className="flex items-center justify-center h-80 md:h-96 rounded-lg shadow-xl bg-card">
-             <MessageCircle className="w-40 h-40 text-primary" />
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex items-center justify-center h-80 md:h-96 rounded-lg shadow-xl bg-card">
+            <MessageCircle className="w-40 h-40 text-primary" />
           </div>
           <div>
-            <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Conversational Access to Insights</h2>
+            <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Turn Your Website Into a 24/7 Sales Assistant</h2>
             <p className="mt-6 text-lg text-foreground/80">
-              Traditional data retrieval can be time-consuming and require specialized skills. FrenGen's intelligent chatbots break down these barriers, allowing any employee to access and understand company information quickly and efficiently.
+              When potential customers visit your website, they often have questions. If those questions go unanswered, they leave. Our AI-powered chatbots engage visitors instantly, answer common questions about your services, and capture leads — even when you're busy running your business.
             </p>
             <p className="mt-4 text-lg text-foreground/80">
-              Imagine instantly getting answers to complex questions about sales figures, project statuses, or HR policies, all through a simple chat interface. That's the power our chatbots deliver.
+              It's like having a sales representative on your website around the clock, at a fraction of the cost.
             </p>
           </div>
         </div>
@@ -62,10 +59,8 @@ export default function ChatbotsPage() {
 
       <Section id="features">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Core Features of Our Chatbots</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Designed for ease of use, security, and powerful data interaction.
-          </p>
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">What Our AI Chatbots Do</h2>
+          <p className="mt-4 text-lg text-muted-foreground">Designed for small businesses that want to engage every visitor.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
           {features.map((feature) => (
@@ -80,49 +75,37 @@ export default function ChatbotsPage() {
         </div>
       </Section>
 
-      <Section id="chatbot-demo" className="bg-muted/50">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Experience Our Chatbot</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Try a simplified demo of how our AI can answer questions based on provided data.
-          </p>
-        </div>
-        <div className="max-w-3xl mx-auto">
-          <ChatbotInteractionDemo />
-        </div>
-      </Section>
-
       <Section id="benefits-chatbots">
         <div className="text-center mb-12">
-            <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Transform Your Internal Operations</h2>
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">How Chatbots Help Your Small Business</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-6 bg-card rounded-lg shadow">
-                <DatabaseZap className="w-10 h-10 text-primary mx-auto mb-3" />
-                <h3 className="font-headline text-xl font-semibold mb-2">Democratize Data Access</h3>
-                <p className="text-sm text-muted-foreground">Make information readily available to everyone, fostering a data-driven culture.</p>
-            </div>
-            <div className="p-6 bg-card rounded-lg shadow">
-                <MessageCircle className="w-10 h-10 text-primary mx-auto mb-3" />
-                <h3 className="font-headline text-xl font-semibold mb-2">Boost Productivity</h3>
-                <p className="text-sm text-muted-foreground">Reduce time spent searching for information, allowing employees to focus on core tasks.</p>
-            </div>
-            <div className="p-6 bg-card rounded-lg shadow">
-                <ShieldCheck className="w-10 h-10 text-primary mx-auto mb-3" />
-                <h3 className="font-headline text-xl font-semibold mb-2">Improve Decision-Making</h3>
-                <p className="text-sm text-muted-foreground">Enable faster, more informed decisions with instant access to relevant data.</p>
-            </div>
+          <div className="p-6 bg-card rounded-lg shadow">
+            <Zap className="w-10 h-10 text-primary mx-auto mb-3" />
+            <h3 className="font-headline text-xl font-semibold mb-2">Never Miss a Lead</h3>
+            <p className="text-sm text-muted-foreground">Every visitor gets an instant response, so you capture leads even outside business hours.</p>
+          </div>
+          <div className="p-6 bg-card rounded-lg shadow">
+            <MessageCircle className="w-10 h-10 text-primary mx-auto mb-3" />
+            <h3 className="font-headline text-xl font-semibold mb-2">Reduce Response Times</h3>
+            <p className="text-sm text-muted-foreground">Customers get answers immediately, improving satisfaction and increasing the chance they'll choose you.</p>
+          </div>
+          <div className="p-6 bg-card rounded-lg shadow">
+            <ShieldCheck className="w-10 h-10 text-primary mx-auto mb-3" />
+            <h3 className="font-headline text-xl font-semibold mb-2">Save Time & Money</h3>
+            <p className="text-sm text-muted-foreground">Automate common questions so you and your team can focus on running the business.</p>
+          </div>
         </div>
       </Section>
 
       <Section id="cta-chatbots" className="text-center">
-        <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Revolutionize Data Interaction?</h2>
+        <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Add a Chatbot to Your Website?</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-          Contact FrenGen to learn how our intelligent chatbots can be tailored to your organization's specific data and needs.
+          Let's discuss how an AI chatbot can help your small business capture more leads and serve customers better.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">
-            <Link href="/contact?subject=Intelligent+Chatbot+Inquiry">Schedule a Consultation</Link>
+            <Link href="/contact">Get Your Free Strategy Call</Link>
           </Button>
         </div>
       </Section>
