@@ -1,12 +1,13 @@
 "use client";
+
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 const PHRASES = [
-  "Beautiful Websites for Small Business",
-  "AI-Powered Website Building",
+  "Beautiful Websites for Small Businesses",
+  "AI-Powered Web Design",
   "Professional Sites in Days, Not Months",
-  "Affordable Web Design with AI Agents",
+  "Affordable Websites with Real Human Support",
 ];
 
 const TYPING_SPEED_MS = 120;
@@ -14,7 +15,7 @@ const DELETING_SPEED_MS = 70;
 const PHRASE_PAUSE_MS = 1500;
 const INTER_PHRASE_PAUSE_MS = 750;
 const INITIAL_CLIENT_DELAY_MS = 100;
-const FALLBACK_TEXT = "Missile OS: AI Website Builder for Small Business";
+const FALLBACK_TEXT = "Beautiful Websites for Small Businesses";
 
 interface TypewriterEffectProps {
   className?: string;
@@ -29,6 +30,7 @@ export function TypewriterEffect({ className, cursorClassName }: TypewriterEffec
   const [isMounted, setIsMounted] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
   const [isEffectLogicActive, setIsEffectLogicActive] = useState(false);
+
   const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
 
   const clearAllTimeouts = () => {
@@ -54,39 +56,45 @@ export function TypewriterEffect({ className, cursorClassName }: TypewriterEffec
     if (!isEffectLogicActive && !isMounted) return;
     if (!isEffectLogicActive) return;
 
+    let delay: number;
+
     if (!isDeleting && charIndex < PHRASES[currentPhraseIndex].length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(PHRASES[currentPhraseIndex].substring(0, charIndex + 1));
-        setCharIndex(charIndex + 1);
-      }, TYPING_SPEED_MS);
-      timeoutsRef.current.push(timeout);
+      setDisplayText(PHRASES[currentPhraseIndex].substring(0, charIndex + 1));
+      setCharIndex(charIndex + 1);
+      delay = TYPING_SPEED_MS;
     } else if (!isDeleting && charIndex === PHRASES[currentPhraseIndex].length) {
-      const timeout = setTimeout(() => {
-        setIsDeleting(true);
-      }, PHRASE_PAUSE_MS);
+      delay = PHRASE_PAUSE_MS;
+      const timeout = setTimeout(() => setIsDeleting(true), delay);
       timeoutsRef.current.push(timeout);
+      return;
     } else if (isDeleting && charIndex > 0) {
-      const timeout = setTimeout(() => {
-        setDisplayText(PHRASES[currentPhraseIndex].substring(0, charIndex - 1));
-        setCharIndex(charIndex - 1);
-      }, DELETING_SPEED_MS);
-      timeoutsRef.current.push(timeout);
+      setDisplayText(PHRASES[currentPhraseIndex].substring(0, charIndex - 1));
+      setCharIndex(charIndex - 1);
+      delay = DELETING_SPEED_MS;
     } else if (isDeleting && charIndex === 0) {
-      const timeout = setTimeout(() => {
-        setIsDeleting(false);
-        setCurrentPhraseIndex((prev) => (prev + 1) % PHRASES.length);
-      }, INTER_PHRASE_PAUSE_MS);
-      timeoutsRef.current.push(timeout);
+      setIsDeleting(false);
+      setCurrentPhraseIndex((prev) => (prev + 1) % PHRASES.length);
+      delay = INTER_PHRASE_PAUSE_MS;
+    } else {
+      return;
     }
 
-    return () => clearAllTimeouts();
-  }, [charIndex, isDeleting, currentPhraseIndex, isEffectLogicActive, isMounted]);
+    const timeout = setTimeout(() => {}, delay);
+    timeoutsRef.current.push(timeout);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [displayText, charIndex, isDeleting, currentPhraseIndex, isEffectLogicActive, isMounted]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setShowCursor((prev) => !prev);
+      if (isMounted) setShowCursor((prev) => !prev);
     }, 530);
     return () => clearInterval(interval);
+  }, [isMounted]);
+
+  useEffect(() => {
+    return () => clearAllTimeouts();
   }, []);
 
   if (!isMounted) {

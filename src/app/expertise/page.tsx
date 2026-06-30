@@ -1,7 +1,7 @@
 import { HeroSection } from '@/components/ui/hero-section';
 import { Section } from '@/components/ui/section';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Palette, Search, Zap, ShieldCheck, Code2, Smartphone, Layers, BarChart, Globe, Rocket } from 'lucide-react';
+import { Palette, Search, Zap, ShieldCheck, Code2, Smartphone, Layers, BarChart, Globe, Rocket, Heart, Target, Wallet } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -21,7 +21,7 @@ const expertiseAreas = [
   {
     icon: <Smartphone className="w-10 h-10" />,
     title: "Mobile-First Development",
-    description: "Your website is designed and tested for every device — phones, tablets, and desktops — with lightning-fast load times.",
+    description: "Your website is designed and tested on every device — phones, tablets, desktops — with lightning-fast load times.",
     tags: ["Responsive", "Fast Loading", "Mobile UX"],
   },
   {
@@ -61,8 +61,9 @@ export default function ExpertisePage() {
     <>
       <HeroSection
         title="How We Build Professional Websites with AI"
-        subtitle="Missile OS combines cutting-edge AI technology with expert human oversight to deliver websites that look great, load fast, and convert visitors into customers — all at a price small businesses can afford."
+        subtitle="frengen.ai combines cutting-edge AI technology with expert human oversight to deliver websites that look great, load fast, and convert visitors into customers — all at a price small businesses can afford."
       />
+
       <Section id="expertise-grid">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {expertiseAreas.map((area) => (
@@ -85,14 +86,49 @@ export default function ExpertisePage() {
           ))}
         </div>
       </Section>
+
       <Section id="philosophy" className="bg-card">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Our Approach to Website Building</h2>
           <p className="mt-6 text-lg text-foreground/80">
-            At Missile OS, we believe that every small business deserves a professional website that actually works. We start by understanding your business, your customers, and your goals. Then our AI agents handle the heavy lifting — design, copywriting, development, and optimization — while our expert team ensures quality at every step. The result is a website that looks premium, loads fast, ranks well, and converts visitors into customers. All delivered in days, not months, at a price that fits your budget.
+            At frengen.ai, we believe every small business deserves a professional website that actually works.
+            We start by understanding your business, your customers, and your goals. Then our AI agents handle
+            the heavy lifting — design, copywriting, development, and optimization — while our expert team
+            ensures quality at every step. The result: a website that looks premium, loads fast, ranks well,
+            and converts visitors into customers. All delivered in days, not months, at a price that fits your budget.
           </p>
         </div>
       </Section>
+
+      <Section id="what-sets-us-apart">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">What Sets Us Apart</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center p-6">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
+              <Heart className="w-6 h-6" />
+            </div>
+            <h3 className="font-headline text-lg font-semibold mb-2">Real Human Support</h3>
+            <p className="text-sm text-muted-foreground">You always have a real person to talk to. No chatbots, no ticket systems, no runaround.</p>
+          </div>
+          <div className="text-center p-6">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
+              <Wallet className="w-6 h-6" />
+            </div>
+            <h3 className="font-headline text-lg font-semibold mb-2">Transparent Pricing</h3>
+            <p className="text-sm text-muted-foreground">Fair monthly subscriptions with no hidden fees, no surprises, and no lock-in contracts.</p>
+          </div>
+          <div className="text-center p-6">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
+              <Target className="w-6 h-6" />
+            </div>
+            <h3 className="font-headline text-lg font-semibold mb-2">Conversion-Focused</h3>
+            <p className="text-sm text-muted-foreground">Every design decision is driven by conversion psychology to turn visitors into customers.</p>
+          </div>
+        </div>
+      </Section>
+
       <Section id="cta-expertise" className="text-center">
         <h2 className="text-2xl font-headline font-bold tracking-tight sm:text-3xl">Ready to Build Your Website?</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">

@@ -1,12 +1,17 @@
 "use client";
+
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { Menu, X, BotIcon, ChevronDown } from 'lucide-react';
+import { Menu, X, Sparkles, ChevronDown } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
 interface NavLinkItem {
@@ -29,18 +34,26 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => { setIsMounted(true); }, []);
-  useEffect(() => { setIsSheetOpen(false); }, [pathname]);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
-  if (!isMounted) { return null; }
+  useEffect(() => {
+    setIsSheetOpen(false);
+  }, [pathname]);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
-          <BotIcon className="h-6 w-6 text-primary" />
-          <span className="font-headline text-lg font-bold text-primary">Missile OS</span>
+          <Sparkles className="h-6 w-6 text-primary" />
+          <span className="font-headline text-lg font-bold text-primary">frengen.ai</span>
         </Link>
+
         <nav className="hidden md:flex space-x-1 lg:space-x-2 items-center">
           {navLinks.map((link) => (
             <Button key={link.href} variant="ghost" asChild className={cn(
@@ -51,6 +64,7 @@ export default function Navbar() {
             </Button>
           ))}
         </nav>
+
         <div className="flex items-center gap-2 md:hidden">
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
@@ -63,8 +77,8 @@ export default function Navbar() {
               <div className="flex flex-col space-y-2">
                 <div className="flex justify-between items-center mb-4">
                   <Link href="/" className="flex items-center space-x-2">
-                    <BotIcon className="h-6 w-6 text-primary" />
-                    <span className="font-headline text-lg font-bold text-primary">Missile OS</span>
+                    <Sparkles className="h-6 w-6 text-primary" />
+                    <span className="font-headline text-lg font-bold text-primary">frengen.ai</span>
                   </Link>
                   <SheetClose asChild>
                     <Button variant="ghost" size="icon">
@@ -73,6 +87,7 @@ export default function Navbar() {
                     </Button>
                   </SheetClose>
                 </div>
+
                 {navLinks.map((link) => (
                   <SheetClose asChild key={link.href}>
                     <Link href={link.href!} className={cn(
@@ -83,6 +98,7 @@ export default function Navbar() {
                     </Link>
                   </SheetClose>
                 ))}
+
                 <Button asChild className="mt-6">
                   <Link href="/contact">Get Your Free Strategy Call</Link>
                 </Button>
@@ -90,6 +106,7 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
         </div>
+
         <Button asChild className="hidden md:inline-flex">
           <Link href="/contact">Get Your Free Strategy Call</Link>
         </Button>

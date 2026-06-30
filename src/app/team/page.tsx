@@ -4,7 +4,7 @@ import { HeroSection } from '@/components/ui/hero-section';
 import { Section } from '@/components/ui/section';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
-import { Linkedin, Users } from 'lucide-react';
+import { Linkedin, Users, Heart, Sparkles, Target, Globe } from 'lucide-react';
 
 interface TeamMember {
   id: number;
@@ -20,30 +20,33 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Nadav Rubinstein",
-    role: "Co-founder & ML Research Lead",
-    bio: "Machine learning researcher with experience from IBM and Rafael Advanced Defense Systems. Leads the AI research behind our website generation engine, ensuring every site is built with intelligent, data-driven design decisions.",
-    expertise: ["Machine Learning", "AI Research", "Website AI", "AI Agents"],
-    image: "/images/team/nadav-rubinstein.jpg",
-    imageHint: "man professional portrait",
-  },
-  {
-    id: 2,
     name: "Shlomi Gibly",
     role: "Co-founder & AI Operations Lead",
-    bio: "Builds the AI agent systems that power Missile OS website creation and maintenance. Experienced in deploying practical AI that replaces manual workflows and delivers real results for small businesses worldwide.",
+    bio: "Builds the AI agent systems that power our website creation and maintenance. Passionate about deploying practical AI that replaces manual workflows and delivers real results for small businesses worldwide.",
     expertise: ["AI Agents", "Website Automation", "Operations", "Web Systems"],
     image: "/images/team/shlomi-gibly.jpg",
     imageHint: "man smiling professional",
+    linkedin: "#",
+  },
+  {
+    id: 2,
+    name: "Nadav Rubinstein",
+    role: "Co-founder & ML Research Lead",
+    bio: "Machine learning researcher with experience from IBM and Rafael Advanced Defense Systems. Leads AI research behind our website generation engine, ensuring every site is built with intelligent, data-driven design decisions.",
+    expertise: ["Machine Learning", "AI Research", "Website AI", "AI Agents"],
+    image: "/images/team/nadav-rubinstein.jpg",
+    imageHint: "man professional portrait",
+    linkedin: "#",
   },
   {
     id: 3,
     name: "Ofir Bar Tal",
     role: "Co-founder & AI Engineering Lead",
-    bio: "Former data scientist at Google (Waze). Turns complex ML research into working products. Leads the engineering of our AI-powered website builder and the LLM applications that generate designs, copy, and layouts automatically.",
+    bio: "Former data scientist at Google (Waze). Turns complex ML research into working products. Leads engineering of our AI-powered website builder and LLM applications that generate designs, copy, and layouts automatically.",
     expertise: ["LLM Applications", "Data Science", "AI Engineering", "Product Engineering"],
     image: "/images/team/ofir-bar-tal.jpg",
     imageHint: "man tech professional",
+    linkedin: "#",
   },
   {
     id: 4,
@@ -53,6 +56,30 @@ const teamMembers: TeamMember[] = [
     expertise: ["Web Strategy", "Client Success", "Conversion Optimization", "SEO"],
     image: "/images/team/omri-ben-ami.jpg",
     imageHint: "man professional portrait",
+    linkedin: "#",
+  },
+];
+
+const values = [
+  {
+    icon: Heart,
+    title: "Human-First, AI-Powered",
+    description: "AI does the heavy lifting, but real people make the decisions. You always have a person to talk to.",
+  },
+  {
+    icon: Target,
+    title: "Results Over Pretty Pixels",
+    description: "A beautiful website that doesn't convert is a waste. Every design choice is driven by conversion psychology.",
+  },
+  {
+    icon: Globe,
+    title: "Small Businesses Everywhere",
+    description: "We help small businesses worldwide get online and grow — regardless of location, industry, or budget.",
+  },
+  {
+    icon: Sparkles,
+    title: "Always Improving",
+    description: "Your website isn't a one-time project. We continuously optimize, update, and improve it using AI.",
   },
 ];
 
@@ -60,24 +87,30 @@ export default function TeamPage() {
   return (
     <>
       <HeroSection
-        title="Meet the Minds Behind Missile OS"
-        subtitle="A focused team of AI engineers, web strategists, and cybersecurity experts dedicated to building professional websites for small businesses around the world."
+        title="Meet the People Behind Your Website"
+        subtitle="We're a small, focused team of AI engineers, web strategists, and customer success experts dedicated to building professional websites for small businesses around the world."
       />
+
       <Section id="team-intro">
         <div className="text-center max-w-3xl mx-auto">
           <Users className="w-16 h-16 text-primary mx-auto mb-6" />
-          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Building Better Websites Through AI</h2>
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Real People, Real Expertise</h2>
           <p className="mt-6 text-lg text-foreground/80">
-            At Missile OS, we combine deep expertise in artificial intelligence with a passion for helping small businesses succeed online. Our team brings together experience from Google, IBM, and Rafael to build AI agents that create professional websites faster and more affordably than traditional agencies. We believe every small business deserves a website that looks premium and actually converts visitors into customers.
+            At frengen.ai, we combine deep expertise in artificial intelligence with a genuine passion for
+            helping small businesses succeed online. Our team brings together experience from Google, IBM,
+            and Rafael to build AI agents that create professional websites faster and more affordably than
+            traditional agencies. We believe every small business deserves a website that looks premium and
+            actually converts visitors into customers.
           </p>
         </div>
       </Section>
+
       <Section id="team-grid" className="bg-muted/50">
-        {teamMembers.length > 0 ? (
+        {teamMembers.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
             {teamMembers.map((member) => (
               <Card key={member.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row p-6 items-center sm:items-start">
-                <div className="relative w-32 h-32 rounded-full overflow-hidden flex-shrink-0 mb-4 sm:mb-0 sm:mr-6">
+                <div className="relative w-32 h-32 rounded-full overflow-hidden flex-shrink-0 mb-4 sm:mb-0 sm:mr-6 ring-4 ring-primary/10">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -112,16 +145,34 @@ export default function TeamPage() {
               </Card>
             ))}
           </div>
-        ) : (
-          <div className="text-center py-12">
-            <p className="text-lg text-muted-foreground">Our team information is being updated. Please check back soon!</p>
-          </div>
         )}
       </Section>
+
+      <Section id="values">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">What We Believe</h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            Our core values shape every website we build and every client relationship we have.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {values.map((v) => (
+            <div key={v.title} className="text-center p-6">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
+                <v.icon className="w-6 h-6" />
+              </div>
+              <h3 className="font-headline text-lg font-semibold mb-2">{v.title}</h3>
+              <p className="text-sm text-muted-foreground">{v.description}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       <Section id="join-us" className="bg-card text-center">
         <h2 className="text-3xl font-headline font-bold tracking-tight sm:text-4xl">Ready to Work with Us?</h2>
         <p className="mt-6 text-lg text-foreground/80 max-w-xl mx-auto">
-          Let's talk about your business and how we can build a professional website that drives results. Book your free strategy call today.
+          Let's talk about your business and how we can build a professional website that drives results.
+          Book your free strategy call today.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">

@@ -1,8 +1,7 @@
-
 import type { ReactNode } from 'react';
 import { Section } from '@/components/ui/section';
 import { cn } from '@/lib/utils';
-import MeshNetworkEffect from '@/components/effects/mesh-network-effect'; 
+import MeshNetworkEffect from '@/components/effects/mesh-network-effect';
 
 interface HeroSectionProps {
   title: string | ReactNode;
@@ -25,9 +24,9 @@ export function HeroSection({
 }: HeroSectionProps) {
   return (
     <Section className={cn("relative bg-gradient-to-b from-background to-transparent pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden", className)}>
-      <MeshNetworkEffect 
-        particleColorHsl="0 0% 100%" /* White for high contrast */
-        lineColorHsl="0 0% 80%"     /* Light gray for high contrast */
+      <MeshNetworkEffect
+        particleColorHsl="12 78% 56%"
+        lineColorHsl="176 42% 32%"
         mouseInfluenceRadius={100}
         particleCount={50}
       />
