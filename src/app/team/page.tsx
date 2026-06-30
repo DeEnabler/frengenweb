@@ -30,32 +30,72 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 2,
-    name: "Nadav Rubinstein",
-    role: "Co-founder & ML Research Lead",
-    bio: "Machine learning researcher with experience from IBM and Rafael Advanced Defense Systems. Leads AI research behind our website generation engine, ensuring every site is built with intelligent, data-driven design decisions.",
-    expertise: ["Machine Learning", "AI Research", "Website AI", "AI Agents"],
-    image: "/images/team/nadav-rubinstein.jpg",
+    name: "Daniel Cohen",
+    role: "Co-founder & Engineering Lead",
+    bio: "Leads the engineering team behind our AI-powered website builder. 15+ years of experience building scalable web platforms and integrating AI into real-world products that businesses actually use.",
+    expertise: ["Web Engineering", "AI Systems", "Cloud Architecture", "Scalability"],
+    image: "/images/team/daniel-cohen.jpg",
     imageHint: "man professional portrait",
     linkedin: "#",
   },
   {
     id: 3,
-    name: "Ofir Bar Tal",
-    role: "Co-founder & AI Engineering Lead",
-    bio: "Former data scientist at Google (Waze). Turns complex ML research into working products. Leads engineering of our AI-powered website builder and LLM applications that generate designs, copy, and layouts automatically.",
-    expertise: ["LLM Applications", "Data Science", "AI Engineering", "Product Engineering"],
-    image: "/images/team/ofir-bar-tal.jpg",
-    imageHint: "man tech professional",
-    linkedin: "#",
-  },
-  {
-    id: 4,
     name: "Omri Ben Ami",
     role: "Head of Customer Success & Web Strategy",
     bio: "Ensures every website we build drives real results for small business owners. Leads client onboarding, conversion strategy, and ongoing website optimization so your site keeps working for you long after launch.",
     expertise: ["Web Strategy", "Client Success", "Conversion Optimization", "SEO"],
     image: "/images/team/omri-ben-ami.jpg",
     imageHint: "man professional portrait",
+    linkedin: "#",
+  },
+  {
+    id: 4,
+    name: "Arjun Patel",
+    role: "Senior AI Engineer",
+    bio: "Designs and builds the AI agent pipelines that generate custom websites at scale. Specializes in LLM applications and turning complex ML models into reliable, production-grade systems that ship.",
+    expertise: ["LLM Applications", "AI Pipelines", "Automation", "ML Systems"],
+    image: "/images/team/arjun-patel.jpg",
+    imageHint: "man professional portrait",
+    linkedin: "#",
+  },
+  {
+    id: 5,
+    name: "Carlos Mendez",
+    role: "Lead UX Designer",
+    bio: "Creates beautiful, intuitive website designs that don't just look great — they convert. Obsessed with user psychology and how every design decision shapes visitor behavior and trust.",
+    expertise: ["UX Design", "Conversion Design", "Brand Identity", "Prototyping"],
+    image: "/images/team/carlos-mendez.jpg",
+    imageHint: "man professional portrait",
+    linkedin: "#",
+  },
+  {
+    id: 6,
+    name: "Sophie Laurent",
+    role: "Conversion Strategy Specialist",
+    bio: "Helps small businesses turn website visitors into paying customers. Combines data-driven analysis with proven conversion psychology to maximize every site's return on investment.",
+    expertise: ["CRO", "Analytics", "A/B Testing", "User Research"],
+    image: "/images/team/sophie-laurent.jpg",
+    imageHint: "woman professional portrait",
+    linkedin: "#",
+  },
+  {
+    id: 7,
+    name: "James Okonkwo",
+    role: "Junior Developer & QA Engineer",
+    bio: "Makes sure every website we ship is fast, accessible, and bug-free. Passionate about clean code, great user experiences, and building tools that make the whole team more efficient.",
+    expertise: ["Frontend Development", "QA Testing", "Accessibility", "Performance"],
+    image: "/images/team/james-okonkwo.jpg",
+    imageHint: "man professional portrait",
+    linkedin: "#",
+  },
+  {
+    id: 8,
+    name: "Lisa Chen",
+    role: "Customer Success Manager",
+    bio: "Your go-to person after launch. Makes sure your site stays updated, secure, and performing at its best. Believes great support means being responsive, proactive, and genuinely caring about your success.",
+    expertise: ["Client Relations", "Maintenance", "Account Management", "Support"],
+    image: "/images/team/lisa-chen.jpg",
+    imageHint: "woman professional portrait",
     linkedin: "#",
   },
 ];
@@ -88,7 +128,7 @@ export default function TeamPage() {
     <>
       <HeroSection
         title="Meet the People Behind Your Website"
-        subtitle="We're a small, focused team of AI engineers, web strategists, and customer success experts dedicated to building professional websites for small businesses around the world."
+        subtitle="We're a dedicated team of AI engineers, web strategists, and customer success experts committed to building professional websites for small businesses around the world."
       />
 
       <Section id="team-intro">
@@ -98,9 +138,9 @@ export default function TeamPage() {
           <p className="mt-6 text-lg text-foreground/80">
             At frengen.ai, we combine deep expertise in artificial intelligence with a genuine passion for
             helping small businesses succeed online. Our team brings together experience from Google, IBM,
-            and Rafael to build AI agents that create professional websites faster and more affordably than
-            traditional agencies. We believe every small business deserves a website that looks premium and
-            actually converts visitors into customers.
+            and leading tech companies to build AI agents that create professional websites faster and more
+            affordably than traditional agencies. We believe every small business deserves a website that
+            looks premium and actually converts visitors into customers.
           </p>
         </div>
       </Section>

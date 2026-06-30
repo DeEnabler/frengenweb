@@ -22,18 +22,11 @@ const teamMembers = [
     expertise: ["AI Agents", "Website Automation", "Operations"],
   },
   {
-    name: "Nadav Rubinstein",
-    role: "Co-founder & ML Research Lead",
-    bio: "Machine learning researcher with experience from IBM and Rafael. Focuses on building custom AI models that solve concrete business problems, not just academic benchmarks.",
-    image: "/images/team/nadav-rubinstein.jpg",
-    expertise: ["Machine Learning", "Deep Learning", "Custom AI"],
-  },
-  {
-    name: "Ofir Bar Tal",
-    role: "Co-founder & AI Engineering Lead",
-    bio: "Former data scientist at Google (Waze). Turns complex ML research into working products. Specializes in LLM applications and building AI systems that actually ship.",
-    image: "/images/team/ofir-bar-tal.jpg",
-    expertise: ["LLM Applications", "Data Science", "Product Engineering"],
+    name: "Daniel Cohen",
+    role: "Co-founder & Engineering Lead",
+    bio: "Leads the engineering team behind our AI-powered website builder. 15+ years of experience building scalable web platforms and integrating AI into real-world products that businesses actually use.",
+    image: "/images/team/daniel-cohen.jpg",
+    expertise: ["Web Engineering", "AI Systems", "Cloud Architecture"],
   },
   {
     name: "Omri Ben Ami",
@@ -41,6 +34,41 @@ const teamMembers = [
     bio: "Ensures every website we build drives real results for small business owners. Leads client onboarding, conversion strategy, and ongoing website optimization so your site keeps working for you long after launch.",
     image: "/images/team/omri-ben-ami.jpg",
     expertise: ["Web Strategy", "Client Success", "Conversion Optimization"],
+  },
+  {
+    name: "Arjun Patel",
+    role: "Senior AI Engineer",
+    bio: "Designs and builds the AI agent pipelines that generate custom websites at scale. Specializes in LLM applications and turning complex ML models into reliable, production-grade systems.",
+    image: "/images/team/arjun-patel.jpg",
+    expertise: ["LLM Applications", "AI Pipelines", "Automation"],
+  },
+  {
+    name: "Carlos Mendez",
+    role: "Lead UX Designer",
+    bio: "Creates beautiful, intuitive website designs that don't just look great — they convert. Obsessed with user psychology and how design decisions drive visitor behavior.",
+    image: "/images/team/carlos-mendez.jpg",
+    expertise: ["UX Design", "Conversion Design", "Brand Identity"],
+  },
+  {
+    name: "Sophie Laurent",
+    role: "Conversion Strategy Specialist",
+    bio: "Helps small businesses turn website visitors into paying customers. Combines data-driven analysis with proven conversion psychology to maximize every site's ROI.",
+    image: "/images/team/sophie-laurent.jpg",
+    expertise: ["CRO", "Analytics", "A/B Testing"],
+  },
+  {
+    name: "James Okonkwo",
+    role: "Junior Developer & QA Engineer",
+    bio: "Makes sure every website we ship is fast, accessible, and bug-free. Passionate about clean code and building tools that make the whole team more efficient.",
+    image: "/images/team/james-okonkwo.jpg",
+    expertise: ["Frontend Development", "QA Testing", "Accessibility"],
+  },
+  {
+    name: "Lisa Chen",
+    role: "Customer Success Manager",
+    bio: "Your go-to person after launch. Makes sure your site stays updated, secure, and performing at its best. Believes great support means being responsive, proactive, and genuinely caring.",
+    image: "/images/team/lisa-chen.jpg",
+    expertise: ["Client Relations", "Maintenance", "Account Management"],
   },
 ];
 
@@ -444,11 +472,12 @@ export default function HomePage() {
             Meet the People Behind Your Website
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-            We're a small, focused team with real-world experience building AI systems and websites that
-            deliver for small businesses. When you work with us, you talk to real people — not a faceless platform.
+            We're a dedicated team of AI engineers, web strategists, and customer success experts committed to
+            building professional websites for small businesses. When you work with us, you talk to real people —
+            not a faceless platform.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member) => (
             <div key={member.name} className="bg-background rounded-xl p-6 text-center border border-border/50 hover:border-primary/30 transition-colors shadow-sm">
               <div className="relative w-28 h-28 rounded-full overflow-hidden mx-auto mb-4 ring-4 ring-primary/10">
